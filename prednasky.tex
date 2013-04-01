@@ -1,0 +1,31 @@
+\input include
+
+\input titulka
+
+\input uvod
+
+% {{{
+% nastavujem cislovanie stran a hlavicku
+% cisla stran chcem dole na vonkajsej strane
+\pageno=1
+
+\footline={
+\ifodd\pageno
+	\the\pageno\hfil
+\else
+	\hfil\the\pageno
+\fi
+}
+
+\headline{\vbox{%
+{\it%
+\noindent Uèebný text\hfill
+Matematika -- Pravdepodobnos»
+}
+\medskip\hrule}}
+
+%}}} 
+
+\input text.tex
+
+\bye

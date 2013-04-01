@@ -1,0 +1,2391 @@
+\section Pravdepodobnos»
+
+\priklad Hodím dva krát kockou. Aká je pravdepodobnos», ¾e aspoò raz
+padla ¹estka? Aká je mno¾ina v¹etkých výsledkov?
+
+\obrazok{Mno¾ina výsledkov}{img/1_1.pdf}
+
+Pravdepodobnos» vypoèítam ako podiel priaznivých výsledkov (tie
+v~rámèeku) a v¹etkých výsledkov.
+
+$$
+P = {11 \over 36} = 0{,}30\bar{5}
+$$
+
+\hotovo
+
+\priklad Dvaja hráèi striedavo hád¾u mincou. Vyhrá ten, ktorému prvému
+padne panna. Aká je pravdepodobnos», ¾e vyhrá ten kto zaèínal?
+
+Mno¾ina výsledkov ($P$ --- panna, $O$ --- orol):
+
+$$
+\eqalign{
+\omega_1 &= P \cr
+\omega_2 &= OP \cr
+\omega_3 &= OOP \cr
+&\vdots\cr
+\omega_n &= \underbrace{O\dots OP}_n
+}
+$$
+
+Aká je mno¾ina priaznivých hier? V¹etky tie s~nepárnym indexom, teda
+$\omega_{2i+1}; \quad i=0,1,\dots$
+
+Pravdepodobnos» priaznivého javu (jedného z~celej mno¾iny) je
+
+$$
+P(\omega_{2i+1}) = {1 \over 2^{2i+1}}.
+$$
+
+Jedna polovica vychádza z~toho, ¾e ide o~mincu a pravdepodobnos», ¾e
+padne panna je $1/2$. Je rovnaká ako pravdepodobnos», ¾e padne orol.
+Nepredpokladám, ¾e niekto je tak ¹ikovný, aby hodil mincu na hranu, ani
+to, ¾e mincu stratím. Exponent menovateµa súvisí s~poètom hodov --- aby
+bola hra priaznivá (pre toho kto zaèína), musí nasta» nepárny poèet
+hodov.
+
+Celková pravdepodobnos», ¾e zví»azí ten, kto zaèínal je súèet v¹etkých
+nepárnych hier. Ide o~geometrickú postupnos», jej súèet mô¾em vyjadri»
+ako $s_n = a_0 (q^n - 1) / (q - 1)$. Pritom platí $q = 1/4$ a $a_0 = 1$.
+
+$$
+P({\rm zví»azí~zaèínajúci}) = \sum\limits_{i=0}^{\infty}
+P(\omega_{2i+1}) = \sum\limits_{i=0}^{\infty} {1 \over 2^{2i+1}} = {1
+\over 2} \sum\limits_{i=0}^\infty {1 \over 2^{2i}} = {1 \over 2}
+\sum\limits_{i=0}^\infty {1 \over 4^i} = {1 \over 2} {1 \over 1-{1 \over
+4}} = {2 \over 3}.
+$$
+
+\hotovo
+
+\priklad Zvolíme si náhodne dve èísla $p,q \in \left<-1;1\right>$. Aká
+je pravdepodobnos», ¾e rovnica $x^2+2px+q=0$ má komplexný koreò?
+
+Výsledok je mno¾ina èísel $p$, $q$ z~tohto intervalu (dvojica èísel).
+Kvadratická rovnica má komplexný koreò ak jej diskriminant $D$ je
+záporný. Teda $D = 4p^2-4q < 0 \Longrightarrow p^2 < q$.
+
+\obrazok{Mno¾ina výsledkov}{img/1_2.pdf}
+
+Sna¾ím sa získa» plochu nad parabolou (na obrázku tmavá). Integrovaním
+ale získam plochu pod parabolou. Preto od celkovej plochy nad osou $p$
+odèítam tú èas» pod parabolou.
+
+$$
+P =
+{2-\int\limits^1_{-1} p^2 \d p \over 4} =
+{1 \over 2} - {1 \over 4} \left[{p^3 \over 3}\right]^1_{-1} =
+{1 \over 2} - {1 \over 4} \cdot {2 \over 3} =
+{1 \over 3}.
+$$
+
+\hotovo
+
+\definicia Priestor elementárnych javov. Mno¾inu $\Omega$ v¹etkých
+výsledkov budeme nazýva» priestor elementárnych javov. Jav je
+reprezentovaný podmno¾inou $A \subset \Omega$.
+
+Ak je $A \subset \Omega$, potom doplnok $A^C$ je jav opaèný.
+
+$$
+A^C = \Omega \backslash A = \{x \in \Omega | x \not \in A\}
+$$
+
+Pre $A, B \subset \Omega$ je jav $A \cap B$ oznaèujúci, ¾e javy $A$ a
+$B$ nastali súèasne.
+
+Jav $A \cup B$ znamená, ¾e nastal aspoò jeden z~javov $A$ alebo $B$.
+
+Ak sú mno¾iny disjunktné (majú prázdny prienik) tak ide o~navzájom sa
+vyluèujúce javy.
+
+$\omega \in \Omega$ je elementárny jav.
+
+\hotovo
+
+Zjednotenie mno¾ín znaèím ako
+
+$$
+\bigcup_{i=1}^\infty A_i = A_1 \cup A_2 \cup A_3 \cup \dots,
+$$
+
+prienik mno¾ín ako
+
+$$
+\bigcap_{i=1}^\infty A_i = A_1 \cap A_2 \cap A_3 \cup \dots.
+$$
+
+\priklad 
+
+$$
+A_i = (0, 1-{1 \over i}), \quad \bigcup_{i=1}^\infty A_i = (0,1)
+$$
+
+\obrazok{Roz¹irujúci sa interval}{img/1_3.pdf}
+
+\hotovo
+
+\priklad
+
+$$
+B_i = (0, {1 \over i}), \quad \bigcap_{i=1}^\infty B_i = \emptyset
+$$
+
+\obrazok{Zmen¹ujúci sa interval}{img/1_4.pdf}
+
+\tvrdenie
+
+{\itemize
+\nli $\left(\bigcup_i A_i\right)^C = \bigcap_i {A_i}^C$
+\nli $\left(\bigcap_i A_i\right)^C = \bigcup_i {A_i}^C$
+}
+
+\hotovo
+
+\dokaz
+
+$x$, ktoré nepatrí ani do jednej mno¾iny $A_i$, sa nachádza v~doplnku ku
+ka¾dej mno¾ine a teda aj v~prieniku týchto doplnkov. 
+
+$
+x \in \left( \bigcup_i A_i\right)^C \Leftrightarrow
+x \not \in \bigcup_i A_i \Leftrightarrow
+\forall_i x \not \in A_i \Leftrightarrow
+\forall_i x \in {A_i}^C \Leftrightarrow
+x \in \bigcap_i {A_i}^C
+$
+
+Pre druhý prípad platí obdobné. To, ¾e $x$ patrí do doplnku prieniku
+mno¾ín $A_i$ je ekvivalentné s~tým, ¾e $x$ nepatrí do tohto prieniku.
+Z~toho plynie, ¾e $x$ nele¾í aspoò v~jednej z~mno¾ín $A_i$ a le¾í aspoò
+v~jednom doplnku ${A_i}^C$. Teda le¾í v~$\bigcup_i {A_i}^C$.
+
+$
+x \in \left(\bigcap_i A_i\right)^C \Leftrightarrow
+x \not \in \bigcap_i A_i \Leftrightarrow
+\exists i: x \not \in A_i \Leftrightarrow
+\exists i: x \in {A_i}^C \Leftrightarrow
+x \in \bigcup_i {A_i}^C
+$
+
+\hotovo
+
+\definicia Sigma-algebra. 
+Oznaèíme si systém podmno¾ín reprezentujúcich javy ako ${\cal A}$. Jeho
+vlastnosti:
+
+{\itemize
+\nli $\Omega \in {\cal A}$,
+\nli Ak je $A \in {\cal A}$, potom $A^C \in {\cal A}$ (s~ka¾dou mno¾inou
+tam patrí aj jej doplnok),
+\nli Ak sú $A_1, A_2 \dots \in {\cal A}$, potom $\bigcup_i A_i \in
+{\cal A}$
+}
+
+Z~týchto vlastností a predo¹lého tvrdenia mô¾em ukáza», ¾e pre mno¾iny
+$A_1, A_2, \dots \in {\cal A}$ platí, ¾e $\bigcap_i A_i \in {\cal A}$:
+
+$$
+\bigcap_i A_i =
+\left(\left(\bigcap_i A_i\right)^C\right)^C =
+\left(\bigcup_i {A_i}^C\right)^C \in {\cal A} \Leftrightarrow
+\bigcup_i {A_i}^C \in {\cal A} \Leftrightarrow
+\forall_i {A_i}^C \in {\cal A} \Leftrightarrow
+\forall_i A_i \in {\cal A}
+$$
+
+Z~tvaru posledného èlenu vidíme, ¾e $\bigcap_i A_i \in {\cal A}$.
+
+Systém ${\cal A}$ sa nazýva $\sigma$-algebra --- sigma-algebra. Nemá niè
+spoloèné s~algebrou ako takou, je to len názov.
+
+\hotovo
+
+\priklad Najmen¹ia sigma-algebra:
+
+$$
+{\cal A} = \{\Omega, \emptyset\}
+$$
+
+Najväè¹ia sigma-algebra:
+
+$$
+{\cal A} = \{{\rm systém~v¹etkých~podmno¾ín}\}
+$$
+
+\hotovo
+
+Pravdepodobnos» javu $A$ je èíslo $P(A) \in \left<0;1\right>$. Zobrazenie
+$P$ je funkcia podmno¾ín. $P$ vedie z~mno¾iny ${\cal A}$ do intervalu
+$\left<0;1\right>$.
+
+\definicia Pravdepodobnos». Zobrazenie $P: {\cal A} \to
+\left<0;1\right>$ sa nazýva pravdepodobnos»ou (pravdepodobnostným
+zobrazením), ak spåòa po¾iadavky ktoré máme:
+
+{\itemize
+\nli $P(\Omega) = 1$ predstavuje jav istý.
+\nli Ak máme javy $A_1 \subset A_2$, potom $P(A_1) \le P(A_2)$.
+\nli Ak sú $A_1, A_2, \dots$ disjunktné, potom $P(\bigcup_i A_i) =
+\sum_i P(A_i)$.
+}
+
+\hotovo
+
+\poznamka K~bodu 2. $A_2$ si mô¾me predstavi» ako $A_1 + B$. Je
+pravdepodobnej¹ie, ¾e sa stane nejaký jav \uv{a e¹te nieèo naviac}.
+
+\hotovo
+\veta Majme pravdepodobnostné zobrazenie P. Potom platí
+
+{\itemize
+\nli $P(\emptyset) = 0$. Jav nemo¾ný. 
+\nli $A_1 \subset A_2$, potom $P(A_2) = P(A_1) + P(A_2 \backslash A_1)$.
+\nli $A_1, A_2$ javy, potom $P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1
+\cap A_2)$.
+\nli $A_1, A_2, \dots$ javy, potom $P(\bigcup_i  A_i) \le \sum_i
+P(A_i)$.
+}
+
+\hotovo
+
+\dokaz
+
+{\itemize
+
+\nli Pou¾ijem (3) z~definície pravdepodobnostného zobrazenia pre $A_1
+= \Omega$, $A_2 = A_3 = \dots = 0$.
+
+$$
+P(\Omega) =
+P\left(\bigcup_i A_i\right) =
+\sum_i P(A_i) =
+P(\Omega) + P(\emptyset) + \dots.
+$$
+
+Odtiaµ plynie, ¾e  $P(\emptyset) = 0$.
+
+\nli Tým som dostal $A_2 = A_1 \cup (A_2 \backslash A_1)$ disjunktné.
+Pomocou bodu (3) z~definície vidie», ¾e $P(A_2) = P(A_1) + P(A_2 \backslash
+A_1)$.
+
+\obrazok{Pravdepodobnos» nadmno¾iny}{img/2_1.pdf}
+
+\nli 
+$A_1 \cup A_2 = A_2 \cup (A_1 \backslash A_2) = A_2 \cup (A_1
+\backslash (A_1 \cap A_2))$. Pomocou dokázaného (2) viem, ¾e $P(A_1
+\backslash (A_1 \cap A_2)) = P(A_1) - P(A_1 \cap A_2)$.
+
+Odtiaµ získavam pre pravdepodobnos» zjednotenia vz»ah $P(A_1 \cup A_2) =
+P(A_2) + P(A_1 \backslash (A_1 \cap A_2)) = P(A_2) + P(A_1) - P(A_1 \cap
+A_2)$.
+
+Oblas» prieniku som zapoèítal dvakrát -- z~mno¾iny $A_1$ aj z~mno¾iny
+$A_2$. Preto som túto oblas» raz musel odèíta».
+
+\obrazok{Pravdepodobnos» zjednotenia}{img/2_2.pdf}
+
+\nli Zavediem disjunktné pomocné mno¾iny:
+
+$$
+\eqalign{
+B_1 &= A_1\cr
+B_2 &= A_2 \backslash A_1 \cr
+B_3 &= A_3 \backslash (A_1 \cup A_2)\cr
+&\vdots\cr
+B_n &= A_n \backslash (\bigcup_{i=1}^{n-1} A_i).
+}
+$$
+
+Zjednotenie týchto pomocných mno¾ín je rovnaké ako zjednotenie pôvodných.
+$\bigcup_i B_i = \bigcup_i A_i$. Ïalej pou¾ijem bod 3. z~predchádzajúcej
+definície. Získavam tak $P(\bigcup_i A_i) = P(\bigcup_i B_i) = \sum_i
+P(B_i) \le \sum_i P(A_i)$. Posledná nerovnos» platí preto¾e $B_i
+\subseteq A_i$ (od $A_i$ som v¾dy odèítal zjednotenie mno¾ín s~men¹ím
+indexom).
+}
+
+\hotovo
+\veta {\it Princíp inklúzie a exklúzie} Majme javy $A_1, \dots, A_n$.
+Potom
+
+$$
+P(A_1 \cup \dots \cup A_n) = \sum^n_{i=1} P(A_i) - \sum_{i<j} P(A_i \cap
+A_j) + \sum_{i<j<k} P(A_i \cap A_j \cap A_k) - \dots + (-1)^{n+1} P(A_1
+\cap \dots \cap A_n).
+$$
+
+\hotovo
+
+\dokaz Indukcia: $n=1$ -- platí ($n=2$ v~predchádzajúcej vete).
+
+Predpokladáme, ¾e vzorec platí pre $n-1$ mno¾ín. Polo¾íme $\tilde A =
+A_1 \cup A_2 \cup \dots \cup A_{n-1}.$ Tým dostaneme
+
+$$
+\eqalign{
+P(A_1 \cup \dots \cup A_n) &=  P(\tilde A \cup A_n) = P(\tilde A) + P(A_n) -
+P(\tilde A \cap A_n) = \cr
+&=\left[\sum_{i=1}^{n-1} P(A_i) - \sum_{i<j\le n-1}
+P(A_i \cap A_j) + \dots + (-1)^n P(A_1 \cap \dots \cap A_{n-1})\right]
++\cr
+&+P(A_n) - P((A_1 \cap A_n) \cup (A_2 \cap A_n) \cup \dots \cup (A_{n-1}
+\cap A_n)) = [\dots] + P(A_n) -\cr
+& - \left[\sum_{i=1}^{n-1} P(A_i \cap A_n) -
+\sum_{i<j\le n-1} P(A_i \cap A_j \cap A_n) + \dots + (-1)^n P(A_1 \cap
+\dots \cap A_n)\right].
+}
+$$
+
+\hotovo
+
+\priklad Do $n$ obálok s~adresami zaradíme náhodne $n$ listov. Aká je
+pravdepodobnos», ¾e aspoò jeden list bude v~správnej obálke?
+
+$A_i = \{{\rm v~i-tej~obálke~je~správny~list}\} \quad i=1,\dots,n.$ 
+$P(A_1\cup A_2 \cup \dots \cup A_n) = ?$
+
+Vlastne hµadám pravdepodobnos» toho, ¾e \uv{jeden list je v~správnej}
+alebo \uv{dva listy sú v~správnej} alebo \dots
+
+Pre pravdepodobnos» toho, ¾e jeden list je v~správnej obálke mô¾em
+napísa» $P(A_i) = {(n-1)! \over n!} = {1 \over n}$. Celkovo mám $n!$
+mo¾ností ako listy rozmiestni». Ak jeden vlo¾ím do správnej obálky,
+ostáva mi u¾ len $(n-1)!$ mo¾ností ako ostatné listy rozmiestnim.
+
+Analogicky mô¾em napísa» vz»ah aj pre viac listov v~správnej obálke:
+$$
+\eqalign{
+P(A_i \cap A_j) &= {(n-2)! \over n!},\cr
+P(A_i \cap A_j \cap A_k) &= {(n-3)! \over n!}.\cr
+}
+$$
+
+Hµadaný výsledok získam ako súèet v¹etkých týchto mo¾ností. Kombinaèným
+èíslom vyjadrujem, ¾e z~$n$ obálok mô¾em vybra» µubvolných $x$ ktoré sú
+v~správnej obálke.
+
+$$
+\eqalign{
+P(A_i \cup \dots \cup A_n) &=
+{n \choose 1} {1 \over n} - {n\choose 2} {(n-2)! \over n!} + {n
+\choose 3} {(n-3)! \over n!} - \cdots +(-1)^{n+1} {1 \over n!} =\cr
+&= 1-{n! \over 2!(n-2)!}{(n-2)! \over n!} + {n! \over 3!(n-3)!} {(n-3)!
+\over n!} - \dots + (-1)^{n+1} {1 \over n!} =
+\sum_{n=1}^\infty (-1)^{n+1}{1 \over n!}
+}
+$$
+
+Èo mô¾em spravi» s~takou sumou? Kto má dobrú pamä» a vie ako pomocou
+sumy mô¾me napísa» $\e^x$, vyhral. 
+
+$$
+\e^x = \sum_{n=0}^\infty {x^n \over n!}
+$$
+
+Je to veµmi podobná suma ako tá v~na¹om príklade. Pre $x=-1$:
+
+$$
+\e^{-1} = \sum_{n=0}^\infty {(-1)^n \over n!}.
+$$
+
+E¹te treba drobnú úpravu exponentu. Rozlo¾ím ho na $(-1)^n \cdot
+(-1)$. Tým teda zmením znamienko pred sumou. Posledná úprava ktorú treba
+je zmeni» index prvého prvku v~sume z~$n=1$ na $n=0$. Ten mô¾em zmeni»
+ak následne odèítam to, èo som ním prièítal. V~tomto prípade pre $n=0$
+to je $-1$.
+
+Po skombinovaní týchto krokov pre hµadanú pravdepodobnos» získavam vz»ah 
+
+$$
+\sum_{n=1}^\infty {1 \over n!} (-1)^{n+1} =
+\sum^\infty_{n=0} \left({1 \over n!} (-1)^{n+1}\right) + 1 =
+- \sum_{n=0}^\infty \left({(-1)^n \over n!}\right) + 1 = 1 - {1 \over \e}
+$$
+
+\hotovo
+
+%% 
+
+\definicia Nezávislé javy. Hovoríme, ¾e javy $A_1, A_2$ sú nezávislé, ak
+platí rovnos» 
+$$
+P(A_1 \cap A_2) = P(A_1) \cdot P(A_2).
+$$
+Pre javy $A_1,\dots, A_2$ platí, ¾e
+sú nezávislé, ak pre ka¾dý výber $A_{i_1}, \dots, A_{i_k}$ platí
+$$
+P(A_{i_1} \cap \dots \cap A_{i_k}) =
+P(A_{i_1}) \cdot \dots \cdot P(A_{i_k}).
+$$
+
+\hotovo
+
+\subsection Bernoulliho schéma, Bernoulliho pokusy
+
+Robíme sériu $n$ nezávislých pokusov a ka¾dý pokus má len dva mo¾né
+výsledky -- 0, 1. Poèet výsledkov typu 1 oznaèíme $X$.
+
+$$
+P(X=k) = {n \choose k} p^k (1-p)^{n-k}, 
+$$
+
+kde $p = P({\rm výsledok=1})$.
+
+Z~$n$ pokusov je $k$ priaznivých. Týchto $n$ mô¾me vybra» µubovoµným
+spôsobom. To vyjadruje prvá èas» vz»ahu. Druhá èas» vyjadruje jav opaèný
+--- pre ten ostáva u¾ len $n-k$ mo¾ností (ostatné sú úspe¹né).
+
+\hotovo
+
+\dokaz 0 1 0 \dots 0 $\to$ $n$ pokusov; 1 je pou¾itá $k$-krát, 0 je
+pou¾itá $n-k$-krát.
+
+\subsection Podmienená pravdepodobnos»
+
+\priklad Hodíme dvakrát kockou.
+
+Jav $A$: súèet je osem, jav $B$: padla aspoò jedna ¹estka.
+
+\obrazok{Hod kockou}{img/3_1.pdf}
+
+$$
+\eqalign{
+P(A) &= {5\over 36} \approx 0{,}139\cr
+P(A|B) &= {2\over 11} \approx 0{,}182
+}
+$$
+
+\hotovo
+
+\definicia Podmienená pravdepodobnos». Majme javy $A$, $B$ a $P(B) > 0$.
+Podmienená pravdepodobnos» javu $A$ za podmienky $B$ je $P(A|B) =
+{P(A\cap B) \over P(B)}$.
+
+Za mno¾inu v¹etkých javov pova¾ujeme $B$ a priaznivé javy sú tie javy
+z~mno¾iny $B$, ktoré patria aj do mno¾iny $A$.
+
+\hotovo
+
+\veta {\it O~úplnej (celkovej) pravdepodobnosti.} Majme javy $B_1$,
+$B_2$, \dots také, ¾e ak ich zjednotíme, tak dostaneme celý základný
+priestor -- $\bigcup_i  B_i = \Omega$. Javy $B_i$ sú disjunktné. Potom
+pre jav $A$ platí $P(A) = \sum_i P(A |B_i) \cdot P(B_i)$.
+
+\hotovo
+
+\dokaz
+$$
+\eqalign{
+\sum_i P(A|B_i) \cdot P(B_i) &= \sum_i { P(A\cap B_i)\over P(B_i)} \cdot
+P(B_i) = \sum_i P(A \cap B_i) = \langle\!\langle {\rm preto¾e\ sú\ 
+disjunktné}\rangle\!\rangle\cr
+ &= P\left(\bigcup_i (A \cap B_i)\right) = P(A)
+}
+$$
+
+Pokryjú celý priestor.
+
+\obrazok{Celková pravdepodobnos»}{img/3_2.pdf}
+
+% tu obrazok
+
+\hotovo
+
+\veta {\it Bayesova.} Majme $B_1, B_2, \dots$ javy také, ¾e sú
+disjunktné a $\bigcup_j B_j = \Omega$. Potom pre jav $A$ platí
+
+$$
+P(B_i | A) = { P(A|B_i) P(B_i)\over \sum_j P(A|B_j)P(B_j)}.
+$$
+
+\hotovo
+
+\dokaz 
+$$
+{ P(A|B_i) P(B_i) \over \sum_j P(A|B_j) P(B_j)} = { P(A|B_i) P(B_i)\over
+P(A)} = { { P(A\cap B_i)\over P(B_i)} P(B_i)\over P(A)} = P(B_i|A).
+$$
+
+\hotovo
+
+\priklad Majme dva ko¹e. $K_1$: tri biele a pä» èervených guµôèok. $K_2$: dve
+biele a jedna èervená guµôèka. Náhodne zvolíme kô¹ a vytiahneme guµôèku.
+Jav $A = \{{\rm je\ biela}\}$.
+
+$$
+\eqalign{
+P(A|K_1) &= {3 \over 8}\cr
+P(A|K_2) &= {2 \over 3}
+}
+$$
+
+$P(A) = P(A|K_1) P(K_1) + P(A|K_2) P(K_2) = {3 \over 8}{1 \over 2} + {2
+\over 3}{1 \over 2} = { 3\over 16} + {1 \over 3} \approx 0{,}52$
+
+Sèítaním som zahrnul v¹etky mo¾nosti vytiahnutia bielej guµôèky ---
+z~prvého aj z~druhého ko¹a. 
+
+Po vytiahnutí guµôèky vidíme, ¾e je biela. Aká je pravdepodobnos», ¾e to
+bolo z~ko¹a $K_1$?
+
+Na toto vyu¾ijem vetu o~úplnej pravdepodobnosti. Súèet v~menovateli
+vyjadruje v¹etky mo¾nosti vytiahnutia bielej guµôèky (teda z oboch
+ko¹ov). Èitateµ len tie pre prvý kô¹.
+
+$$
+P(K_1|A) = {P(A|K_1) P(K_1) \over P(A|K_1)P(K_1) + P(A|K_2)P(K_2)} = {{3 
+\over 8} {1 \over 2}\over { 3\over 8} {1 \over 2} + {2 \over 3} {1 \over
+2}} = { { 3\over 8}\over { 3\over 8}+ { 2\over 3}} = { 9\over 9+16} = {9
+\over 25} = 0{,}36.
+$$
+
+V~ko¹i $K_2$ bolo viac bielych ku èerveným, preto je preferovaný.
+
+\hotovo
+\subsection Náhodná velièina
+
+\priklad Hodíme dvakrát kockou. Aká je pravdepodobnos», ¾e výsledky sa
+lí¹ia najviac o~jednu?
+
+$X_i$ je poèet bodov v~$i$-tom hode; $i=1,2$.
+
+$$
+|X_1 - X_2| \le 1
+$$
+
+$X_i$ je funkcia definovaná na obore $\Omega$. Miesto funkcie hovoríme
+o~náhodnej velièine.
+
+$$
+X_1(i,j) = i \quad X_2(i,j) = j,
+$$
+
+kde $(i,j) \in \Omega = \{(i,j)|i,j = 1,\dots,6\}$.
+
+
+$(i,j)$ je vlastne mno¾ina výsledkov v¹etkých hodov.
+\hotovo
+
+\definicia Náhodná velièina. Funkcia $X: \Omega \to \R$ sa nazýva
+náhodná velièina, ak platí, ¾e $\{\omega \in \Omega | X(\omega) \subset
+I\} \in {\cal A}$ pre ka¾dý interval $I \subset \R$.
+
+Náhodná velièina ka¾dému mo¾nému výsledku pokusu priradzuje nejaké
+reálne èíslo.
+
+\hotovo
+
+Ak sú $X_1$ a $X_2$ náhodné velièiny, potom aj $X_1 + X_2$, $X_1 \cdot
+X_2$ a $X_1 / X_2$ sú tie¾ náhodné velièiny. Dokonca ak $X_1, X_2,
+\dots$ sú náhodné velièiny potom aj $X = \lim_{n\to \infty} X_n$ je tie¾
+náhodná velièina (plynie z~definície ${\cal A}$).
+
+\priklad $X_1, X_2$ sú výsledky dvoch hodov kockou.
+
+$Y = X_1 + X_2; \quad Y = 2,\dots, 12$. Nemô¾em hodi» men¹í súèet ne¾ 2
+-- najmen¹ia hodnota na oboch kockách je 1. Rovnako platí aj pre
+maximum.
+To, ¾e hodím takýto extrém vyjadruje pravdepodobnos» $P(Y=2) = P(Y=12) =
+{1 \over 36}$. Buï na oboch kockách padnú jednotky, alebo ¹estky.
+
+$P(Y=3) = { 2\over 36}$.
+
+\obrazok{Pravdepodobnos» pri hode dvoma kockami}{img/4_1.pdf} 
+
+\hotovo
+
+\definicia Distribuèná funkcia. Majme náhodnú velièinu $X$. Distribuèná
+funkcia príslu¹ná náhodnej velièine $X$ je funkcia $F_X(t)$.
+
+$$
+F_X(t) = P(\{\omega \in \Omega| X(\omega) \le t\}) = P(X\le t)
+$$
+
+\hotovo
+
+\priklad Hodíme dva krát mincou. Náhodný jav $X$ je poèet panien. Ako
+vyzerá distribuèná funkcia?
+
+$X=0,1,2,\dots$
+
+$$
+F_X(t) = P(X \le t) = \cases{
+0; & $t <0$.\quad Nemô¾e padnú» záporný poèet panien.\cr
+{1/4}; & $t \in \left<0,1\right)$.\quad Nepadne ¾iadna panna.\cr
+{3/4}; & $t \in \left<1,2\right)$.\quad Nepadne ¾iadna alebo padne jedna
+panna.\cr
+1; & $t \ge 2$.\quad Nepadne ¾iadna alebo padne jedna alebo dve panny.
+}
+$$
+
+\obrazok{Distribuèná funkcia}{plot/4_1.pdf}
+
+\hotovo
+
+\priklad Zostrojíme kocku s~hranou $x$. Èíslo $x$ zvolíme náhodne, $x
+\in \langle0;1\rangle$. Zaujíma nás objem $V$.
+Aká je jeho distribuèná funkcia?
+
+Distribuèná funkcia s~parametrom $t$ ukazuje aká je pravdepodobnos», ¾e
+objem je men¹í alebo rovný ako $t$.
+
+Keï¾e objem kocky je úmerný tretej mocnine jeho hrany, teda $V = x^3$, mô¾me
+pravdepodobnos» $P(x^3 \le t)$ upravi» na $P(x \le \root 3 \of {t})$.
+
+Pre distribuènú funkciu teda platí:
+
+$$
+F_V(t) = P(V \le t) = 
+\cases{
+0; & $t < 0$ \cr
+1; & $t \ge 1$ \cr
+\root 3 \of {t}; & $t\in \left<0;1\right>$
+}.
+$$
+
+Nulová pravdepodobnos» záporného objemu (fyzikálne nemo¾né) a jednotková
+pravdepodobnos» objemu men¹ieho alebo rovného ne¾ jedna (s~hranou
+o~maximálnej veµkosti 1 väè¹í objem nedosiahneme) je zrejmá.
+
+Zaujímavý je ten interval, v~ktorom sa objem mení, teda $t \in
+\langle0;1\rangle$. Distribuèná funkcia je na tomto intervale úmerná
+tretej odmocnine parametru, èo je znázornené na obrázku.
+
+\obrazok{Distribuèná funkcia}{plot/4_2.pdf}
+
+\hotovo
+
+\tvrdenie $P(X \in (a;b\rangle ) = F_X(b) - F_X(a)$.
+
+\hotovo
+
+\dokaz
+$$
+\eqalign{
+F_X(b) &=
+P(X \le b) =
+P(X \in (-\infty;b\rangle ) =
+P(X \in ( (-\infty;a\rangle \cup (a;b\rangle ) = \cr
+&= P(X \in (-\infty;a\rangle ) + P(X \in (a;b\rangle ) = 
+P(X \le a) + P(X \in (a;b\rangle ) =
+F_X(a) + P(X \in (a;b\rangle).
+}
+$$
+
+\hotovo
+
+\veta Majme $F_X(t)$ distribuènú funkciu. Potom platí:
+
+{\itemize
+\nli $F_X(t)$ je neklesajúca.
+\nli $\lim_{t\to \infty} F_X(t) = 1$.
+\nli $\lim_{t\to -\infty} F_X(t) = 0$.
+}
+
+\hotovo
+
+\dokaz
+
+{\itemize
+\nli Ak sú $t_1 \le t_2$, potom $F_X(t_1) = P(X \le t_1) \le P(X \le
+t_2) = F_X(t_2)$ (z~vlastnosti $P$: $A_1 \subset A_2$; $P(A_1) \le
+P(A_2)$).
+
+\nli Oznaèíme si $A_n = (X \le n)$.
+
+\obrazok{Vnorené javy. $\omega$ je bod mimo zjednotenia}{img/4_2.pdf}
+
+$\bigcup^\infty_{n=1} A_n = \Omega$. Ak by to neplatilo, tak bod ktorý
+tam nepatrí by nemal reálnu hodnotu. Platilo by $X(\omega) > n$ pre ka¾dé
+$n$, èo je spor.
+
+Naviac platí: $\bigcup^\infty_{n=k} A_n = \Omega$ pre akékoµvek $k$ ---
+$A_n$ v~sebe zahàòa aj $A_{n-1}$, \dots. Je to toti¾ jej nadmno¾ina,
+$A_n = (X \le n) \supseteq (X \le n -1) = A_{n-1}$.
+
+Distribuèná funkcia je s~pravdepodobnos»ou vo vz»ahu podµa $F_X(n) = P(x \le n) = P(A_n)$.
+
+Celý priestor elementárnych javov mô¾em vyjadri» ako
+
+$$
+\Omega =
+\bigcup^\infty_{n=k} =
+A_k \cup (A_{k+1} \backslash A_k) \cup (A_{k+2} \backslash A_{k+1}) \cup \dots =
+A_k \cup \bigcup^\infty_{i=k} (A_{i+1} \backslash A_i).
+$$
+
+Je to vlastne zjednotenie poèiatoènej mno¾iny $A_k$ a prstencových
+obalov okolo nej. Takéto zjednotenie nemá spoloèný prienik. Preto 
+mô¾em vyu¾i» vlastnos», ¾e pravdepodobnos» zjednotenia je súèet
+pravdepodobností a napísa»: 
+
+$$
+I=P(\Omega) =
+P(A_k \cup \bigcup^\infty_{i=k}(A_{i+1} \backslash A_i) =
+P(A_k) + \sum^\infty_{i=k} P(A_{i+1} \backslash A_i).
+$$
+
+Preto¾e suma v~poslednom èlene je konvergujúca, je 
+$$
+\lim_{k \to \infty} \sum^\infty_{i=k} P(A_{i+1} \backslash A_i) = 0
+$$
+
+(odobral som vnútornú mno¾inu a sèítam prstence, ktoré ju obklopujú a
+tvoria jej nadmno¾iny; èím je $k$ väè¹ie, tým menej prstencov nasèítam).
+
+Z~poslednej rovnice vychádza, ¾e 
+
+$$
+1 =
+\lim_{k\to \infty} P(A_k) + 0 =
+\lim_{k\to \infty} F_x(k)
+$$
+
+a teda $\lim_{t \to \infty} F_X(t) = 1$.
+
+\nli
+
+$$
+0 \le
+F_X(-n) =
+P(X \le -n) =
+P(-X \ge n) =
+1 - P(-X < n) \le
+1 - P(-X \le n-1) =
+1 - F_{-X}(n-1)
+$$
+
+Po prevedení na limitu
+
+$$
+0 \le
+\lim_{n \to \infty} F(-n) \le
+1 - \lim_{n \to \infty} F_{-X} (n-1) =
+0,
+$$
+
+z~èoho $\lim_{n \to \infty} F_X(-n) = 0$.
+
+}
+\hotovo
+
+\priklad Majme jednotkový kruh. Spravíme v~òom náhodnú tetivu tak, ¾e
+zvolený bod $S$ bude jej stredom. Oznaèíme $X$ ako då¾ku tetivy. Bod $O$
+je stred kruhu.
+
+$S=(x,y)$, vzdialenos» $S$ a $O$ je $\sqrt{x^2+y^2}$. Då¾ku tetivy
+zistím ak si uvedomím, ¾e jej polovica je tvorená odvesnou trojuhoµníka
+s~preponou rovnou polomeru kruhu a druhou odvesnou tvorenou úseèkou
+$SO$. Podµa Pythagorovej vety platí $X=2\sqrt{1-(x^2+y^2)}$.
+
+$F_X(t) = P(X\le t) =
+\cases{
+0; & $t< 0$\cr
+1; & $t \ge 2$\cr
+P\left(2\sqrt{1-(x^2+y^2)} \le t\right); & $t \in \langle 0,2)$\cr
+}$
+
+$$
+\eqalign{
+P\left(2\sqrt{1-(x^2+y^2)} \le t\right) &=
+P\left(1-(x^2+y^2) \le { t^2\over 4}\right) =
+P\left(1-{t^2 \over 4} \le x^2+y^2\right) = \cr
+&=  P\left(\sqrt{1-{t^2 \over 4}} \le \sqrt{x^2+y^2}\right) =
+{ \pi - \pi(1-{t^2 / 4})\over \pi} =
+{t^2 \over 4}.
+}
+$$
+
+\obrazok{Hodnota $1- t^2/4$ vyjadruje ¹írku medzikru¾ia (oznaèené ¹edou
+farbou)}{img/4_3.pdf}
+
+Èíslo $\pi$ predstavuje celý kruh, $\pi - \pi(1-t^2/4)$ je vnútorný kruh
+(biely).
+
+\obrazok{Distribuèná funkcia}{plot/4_3.pdf}
+
+\hotovo
+\priklad Zostrojíme náhodnú tetivu pomocou voµby bodu $A$ na kru¾nici.
+Spojíme ho so stredom $O$. Na tejto úseèke bude bod $S$. Tetiva má
+stred v~bode $S$.
+
+Voµba $A$ je voµba uhlu $\alpha \in \langle 0,2\pi\rangle $.
+$\Omega = \left\{(\alpha,S) | \alpha \in \langle 0,2\pi\rangle, S \in
+\langle 0,1\rangle \right\}$. Då¾ka úseèky $OS$ je $s$.
+
+Då¾ka tetivy je $l=2\sqrt{1-s^2}$ a predstavuje náhodnú velièinu.
+
+Distribuèná funkcia 
+
+$$
+F(t) = P(l \le t) =
+\cases{
+0; & $t < 0$\cr
+1; & $t \ge 2$ (tetiva by mala väè¹iu då¾ku ne¾ priemer kru¾nice)  \cr
+P(2\sqrt{1-s^2} \le t); & $t\in \langle 0,2 \rangle)$
+}
+$$
+
+$$
+\eqalign{
+P\left(2\sqrt{1-s^2} \le t\right) &= 
+P\left(1-s^2 \le {t^2 \over 4}\right) = 
+P\left(s^2 \ge 1- {t^2 \over 4}\right) = 
+P\left(\sqrt{1-{t^2 \over 4}} \le s\right) = \cr
+&=  {2\pi\over 2\pi} \left(1-\sqrt{1-{t^2\over 4}}\right)=
+1-\sqrt{1-{t^2\over 4}}.
+}
+$$
+
+\obrazok{Distribuèná funkcia}{plot/5_1.pdf}
+
+\hotovo
+
+\priklad Tetivu zostrojím spojením dvoch náhodne zvolených bodov na
+kru¾nici. Bod $B$ náhodne zvolím a bod $A$ získam pootoèením o~uhol
+$\alpha$. $\Omega = \langle 0,2\pi\rangle$.
+
+Pomocou Kosínusovej vety
+\footnote{$^{1)}$}{Vz»ah medzi stranami $a$, $b$, $c$ trojuholníka
+s~vnútornými uhlami $\alpha$, $\beta$, $\gamma$ je vo vz»ahu podµa rovnice
+$a^2 = b^2 + c^2 - 2bc \cdot \cos\alpha$. Uhol $\alpha$ je protiµahlý
+ku strane $a$. Platí ekvivalentne aj po zámene jednotlivých strán a uhlov.} 
+vyjadrím kvadrát då¾ky tetivy ako
+
+$$
+l^2 =
+1^2+1^2-2\cdot 1\cdot 1\cos\alpha =
+2-2\cos\alpha =
+2(1-\cos\alpha) =
+\left<\!\!\left< \sin^2{\alpha \over 2} = {1 \over 2}
+(1-\cos\alpha)\right>\!\!\right> =
+4\sin^2{ \alpha\over 2}.
+$$
+
+Po odmocnení dostávam pre då¾ku tetivy vz»ah $l = 2\sin{\alpha \over 2}$. Pre distribuènú
+funkciu platí
+
+$$
+F(t) = P(l\le t) = \cases{
+0 &$t < 0$\cr
+1 &$t \ge 2$\cr
+P(l \le t) & $t \in \langle 0,2 \rangle$
+}
+$$
+
+$$
+\eqalign{
+P(l \le t) &=
+P\left(2\sin{\alpha \over 2} \le t\right) =
+P\left(\sin{\alpha \over 2} \le {t\over 2}\right) =
+{2\cdot 2\arcsin(t/2) \over \underbrace{2\pi}_{\rm ceµková\ då¾ka}} =
+{2\over \pi} \arcsin {t\over 2}
+}
+$$
+
+Pri úprave som vyu¾il to, ¾e 
+$\sin{\alpha_0 \over 2} = {t \over 2} \Leftrightarrow {\alpha_0 \over 2}
+= \arcsin {t \over 2} \Leftrightarrow \alpha_0 = 2\arcsin {t \over 2}$.
+
+\obrazok{Distribuèná funkcia}{plot/5_2.pdf}
+
+\hotovo
+
+Tieto tri príklady boli veµmi podobné. V¾dy ¹lo o~zostrojenie tetivy a
+hµadanie pravdepodobnosti, ¾e jej då¾ka bude men¹ia ako nejaký
+parameter. Mô¾e prekvapi» to, ¾e nám vy¹iel v¾dy iný výsledok. Je treba
+si uvedomi», ¾e tetivu sme zostrojili v¾dy iným spôsobom. Preto je pri
+rie¹ení reálnych príkladov uvedomi» si aké vlastnosti má skúmaný jav.
+Ak by sme nepresne urèili jeho vlastnosti (a boli by sme si pri tom
+istí, ¾e sme ¾iadnu chybu nespravili), tak výsledok mô¾e by» nezmysel.
+
+\priklad Aká je pravdepodobnos», ¾e då¾ka náhodnej tetivy je aspoò $1$,
+teda 
+
+$$
+P(l \ge 1) =
+P\left(l \in (1,\infty)\right) =
+F(\infty) - F(1) =
+1- F(1)?
+$$
+
+Postupne pre prípady z~predo¹lých príkladov:
+
+{\itemize
+\rli $F(t) = {t^2 / 4}$
+
+$P = 1-{1 / 4} = {3 / 4}$ 
+
+\rli $F(t) = 1-\sqrt{1-{t^2 / 4}}$
+
+$P = 1 - \left(1-\sqrt{1-{1 / 4}}\right) = {\sqrt{3} / 2}$
+
+\rli $F(t) = {2/ \pi} \cdot \arcsin({t / 2})$
+
+$P = 1- {2 / \pi} \cdot \arcsin({1 / 2}) = 1 - {2 / \pi} \cdot {\pi/ 6}
+= {2 / 3}$
+}
+
+Uvedené distribuèné funkcie platia pre parameter $t$ z~intervalu $\langle0,2\rangle$.
+
+\hotovo
+
+\definicia Diskrétna náhodná velièina. Náhodná velièina sa nazýva
+diskrétna, ak jej distribuèná funkcia je po èastiach kon¹tantná.
+
+Pravdepodobnostná funkcia $P(t) = P(X=t)$.
+
+\definicia {Absolútne spojitá. Hustota}. Náhodná velièina $X$ sa nazýva
+absolútne spojitá, ak existuje funkcia $f$ taká, aby $F_X(t) =
+\int^t_{-\infty} f(s) \d s$ (tj. $F_X' = f$). Funkcia $f$ sa
+potom nazýva hustota.
+
+Podµa hustoty vieme, ktoré hodnoty sú najpravdepodobnej¹ie. Najväè¹ia
+hustota predstavuje najväè¹iu pravdepodobnos».
+
+$$
+P(X \in \langle a,b \rangle) = \int^b_a f(s) \d s
+$$
+
+Hustota je navy¹e taká nezáporná funkcia, pre ktorú platí
+
+$$
+P(X \in (-\infty,\infty)) = \int^{\infty}_{-\infty} f(s) \d s = 1. 
+$$
+
+
+\hotovo
+
+\priklad Dva krát hodíme mincou, náhodný jav $X$ predstavuje poèet
+panien.
+
+\obrazok{Distribuèná funkcia diskrétnej náhodnej velièiny}{plot/5_3.pdf}
+
+Hustota $f(t)$ je vý¹ka skoku $F_x(t)$.
+
+\obrazok{Pravdepodobnostná funkcia}{plot/5_4.pdf}
+
+\hotovo
+
+\priklad Pre predchádzajúce príklady s~tetivou urèi» hustotu.
+
+{\itemize
+\rli
+$$
+f(t) = \cases{
+0; & $t \not \in \left<0,2\right)$ (nulová derivácia)\cr 
+(t^2/4)' = (t / 2); & $t\in \left<0,2\right)$
+}
+$$
+
+\obrazok{Hustota pravdepodobnosti}{plot/5_5.pdf}
+
+\rli
+$$
+f(t) = \cases{
+0; & $t \not \in \left<0,2\right)$\cr
+\left(1-\sqrt{1-(t^2/4)}\right)' = -{1/2 \over \sqrt{1-(t^2 / 4)}} \left(- {t / 2}\right) =
+{{t / 4}\over \sqrt{1-(t^2 / 4)}}; & $t \in \left<0,2\right)$
+}
+$$
+
+\obrazok{Hustota pravdepodobnosti}{plot/5_6.pdf}
+
+\rli
+$$
+f(t) = \cases{
+0; & $t \not \in \left<0,2\right)$\cr
+\left({2 \over \pi} \arcsin{t \over 2}\right)' = {2 \over \pi} {1\over \sqrt{1-(t/2)^2}} \cdot {1 \over 2} = {1 \over \pi}
+{1 \over \sqrt{1-(t/2)^2}}; & $t \in \left<0,2\right)$
+}
+$$
+
+
+\obrazok{Hustota pravdepodobnosti}{plot/5_7.pdf}
+
+}
+
+\hotovo
+
+\subsection Základné typy rozdelení
+
+\subsubsection Diskrétne
+
+{\itemize
+\nli Bernoulliho (Binomické) $B(n,p)$ 
+
+$$
+P(X=k) = {n \choose k} p^k (1-p)^{n-k}
+$$
+
+Èíslo $n$ vyjadruje poèet pokusov, $k$ je poèet priaznivých výsledkov.
+Hodnota $p$ je pravdepodobnos» úspechu v~jednom pokuse.
+
+\nli Geometrické
+
+$$
+P(X=k) = p(1-p)^{k-1} \quad k=1,2,\dots
+$$
+
+Priaznivý jav nastane a¾ v~$k$-tom pokuse --- po padnutí $k-1$
+nepriaznivých hodov. $X$ je teda náhodná velièina vyjadrujúca poèet
+pokusov do prvého úspechu.
+
+\nli Rovnomerné
+
+$$
+P(X=k) = {1 \over n} \quad k = 1,2,\dots,n
+$$
+
+Rozdelenie, kde v¹etky javy majú rovnakú pravdepodobnos» úspechu. Èíslo
+$n$ je poèet v¹etkých mo¾ností ktoré mô¾u nasta».
+
+\nli Poissonovo $P(\lambda)$
+
+$$
+P(X=k) = {\lambda^k \over k!}e^{-\lambda} \quad k=0,1,\dots
+$$
+
+Priaznivý jav sa vyskytne $k$ krát. Pravdepodobnos» $p$ jeho výskytu
+v~jednom pokuse je malá a týchto pokusov je veµký poèet $n$. Èíslo
+$\lambda=np$.
+
+}
+
+\subsubsection Spojité
+
+{\itemize
+\nli Rovnomerné na $\left<a,b\right>$
+
+$$
+f(t) = \cases{
+0; & $t \not \in \left<a,b\right>$\cr
+{1\over b-a}; & $t \in \left<a,b\right>$
+}
+$$
+
+Hodnota pravdepodobnosti je kon¹tantná na celom intervale hodnôt, ktoré
+náhodná velièina nadobúda. Je nepriamo úmerná veµkosti tohto intervalu.
+
+\nli Exponenciálne $E(\lambda)$
+
+$$
+f(t) = \cases{
+0; & $t < 0$ \cr
+\lambda e^{-\lambda t}; & $ t\ge 0$
+}
+$$
+
+Ukazuje pravdepodobnos» toho, ¾e jav nastane, v~závislosti na parametri.
+Tým býva obvykle èas a jav znázoròuje pravdepodobnos», ¾e nejaké
+zariadenie bude po tomto èase fungova».
+
+\obrazok{Hustota exponenciálneho rozdelenia}{plot/5_8.pdf}
+
+\nli Normálne $N(\mu,\sigma)$
+
+$$
+f(t) = {1 \over \sqrt{2\pi} \sigma} e^{-(t-\mu)^2 \over 2\sigma^2} \quad
+t\in \R
+$$
+
+\obrazok{Hustota normálneho rozdelenia. $\sigma=0.5$}{plot/5_9.pdf}
+}
+
+\hotovo
+
+\priklad Bernoulliho rozdelenie.
+
+Hád¾eme $n$-krát mincou, $X$ je poèet panien. $p = P({\rm panna})$.
+
+\hotovo
+
+\priklad Geometrické rozdelenie.
+
+Koµko krát musíme hodi» kockou, ne¾ nám padne prvý krát ¹estka? $p=
+P({\rm padne~6})$.
+
+\hotovo
+\priklad Rovnomerné rozdelenie.
+
+Hodíme kockou, $X$ je poèet bodov pri hode kockou. $n=6$, $p={1\over
+6}$.
+
+\hotovo
+\priklad Poissonovo rozdelenie.
+
+Uva¾ujme telefónny uzol a poèet prichádzajúcich spojení behom jednej
+hodiny. Ich poèet oznaèíme $X$. Zistíme $P(X=k)$.
+
+$t_1,\dots,t_k$ sú èasy prichádzajúcich spojení.
+
+\obrazok{Èasy prichádzajúcich spojení}{img/6_1.pdf}
+
+Rozdelíme delením interval $\left<0,1\right>$ na $n$ dielkov då¾ky
+$1/n$ tak, aby v~ka¾dom bol najviac jeden z~údajov $t_1,\dots,t_k$.
+
+Tým dostaneme Bernoulliho schému so sériou $n$-pokusov, kde \uv{úspech}
+znamená, ¾e v~príslu¹nom dielku le¾í nejaké spojenie -- nejaké z~èísel
+$t_1,\dots,t_k$.
+
+Potom $P(X=k)$ znamená, ¾e sme mali úspech $k$ krát.
+
+$$
+P(X=k) \approx {n \choose k} p^k (1-p)^{n-k}
+$$
+
+Model s~pevným $n$ je priblí¾enie, správny výsledok je pre $n \to
+\infty$.
+
+P závisí na tom aké jemné delenie máme:
+$$
+P(X=k) \approx
+{n \choose k} p_n^k(1-p_n)^{n-k}.
+$$
+
+Hµadáme, ako závisí $p_n$ na indexe $n$.
+
+Pre $k=0$:
+
+$$
+P(X=0) =
+\lim_{n \to \infty} {n \choose 0} p_n^0(1-p_n)^{n-0} =
+\lim_{n \to \infty} (1-p_n)^n =
+\left<\!\!\left<a^b = \e^{b\cdot\ln(a)}\right>\!\!\right> =
+\lim_{n \to \infty} \e^{n \cdot \ln(1-p_n)}
+$$
+
+$$
+\lim_{n\to \infty} n\cdot \ln(1-p_n) =
+\left<\!\!\!\left<\lim_{h \to 0} {\ln(1+h)\over h} = 1\right>\!\!\!\right> =  
+$$
+
+(pre $n\to\infty$ je $p_n \to 0$)
+
+$$
+= \lim_{n \to \infty} { \ln(1-p_n)\over (-p_n)} (-p_n \cdot n) =
+\lim_{n \to \infty} (-p_n\cdot n) =
+-\lambda.
+$$
+
+Vieme, ¾e má vyjs» nejaké vlastné èíslo. Odtiaµ plynie, ¾e $p_n =
+{\lambda / n}$. Záver:
+
+$$
+\eqalign{
+P(X = k) &=
+\lim_{n \to \infty} {n \choose k} p_n^k (1-p_n)^{n-k} =
+\lim_{n \to \infty} {n\choose k} {\lambda^k \over n^k} \left(1- {\lambda
+\over n}\right)^{n-k} = \cr
+%%
+ &= \lim_{n \to \infty} {n(n-1)(n-k+1)\over k!}
+{\lambda^k \over n^k} {(1-\lambda/n)^n \over (1-\lambda/n)^k} =\cr
+%%
+&= {\lambda^k \over k!} \lim_{n \to \infty} {n(n-1)(n-2)\cdots(n-k+1) \over
+n^k} {\overbrace{(1-\lambda/n)^n}^{e^{-\lambda}} \over
+\underbrace{(1-\lambda/n)^k}_{1}} = \cr
+%%
+&= {\lambda^k \over k!}\e^{-\lambda}
+\lim_{n \to \infty} {n\over n}{n-1\over n} \cdots {n-k+1\over n} =
+{\lambda^k \over k!} = \e^{-\lambda}.
+}
+$$
+
+Pravdepodobnos» pre v¹etky hodnoty parametru sa rovná $1$, teda aj
+súèet od $k=0,\dots, \infty$ má by» rovný $1$:
+
+$$
+\sum^\infty_{k=0} {\lambda^k \over k!} \e^{-\lambda} =
+\e^{-\lambda} \left(1+{ \lambda\over 1!} + {\lambda^2 \over 2!} + \cdots\right) =
+e^{-\lambda} \cdot \e^\lambda =
+1.
+$$
+
+Bernoulliho vzorec aproximuje Poissono rozdelenie.
+
+\hotovo
+
+\priklad Aká je pravdepodobnos», ¾e medzi 500 náhodne vybranými µudmi je
+$k$ takých, ktorí majú narodeniny 1. 1.?
+
+$$
+P={n \choose k} p^k (1-p)^{n-k}
+$$
+
+$n=500$, $p=1/365$.
+
+$$
+P={500 \choose k}\left({1\over 365}\right)^k \left({364 \over
+365}\right)^{500-k}.
+$$
+
+Pri Poissonovom rozdelení $(\lambda^k/k!)\e^{-\lambda}$ je v~tomto prípade $\lambda = 500/365.$
+
+Pre $k=1,2,6$:
+\medskip
+
+\centerline{
+\vbox{
+\halign{\strut{\bf #} \hfil & \hfil # \hfil & \hfil # \hfil & \hfil # \hfil & \hfil # \hfil\cr
+ & $k=0$ & $k=1$ & $k=2$ & $k=6$ \cr \noalign{\hrule}
+B:& 0{,}2573 & 0{,}3484 & 0{,}2388 & 0{,}0023 \cr
+P:& 0{,}2541 & 0{,}3481 & 0{,}2385 & 0{,}0023 \cr
+}}}
+\medskip 
+
+Niekoho mô¾e zauja», ¾e táto závislos» nie je monotónna. To je spôsobené
+tým, ¾e máme viac µudí ako dní. Tak¾e je menej pravdepodobné, ¾e je deò
+v~ktorom sa nikto nenarodil ne¾ aby sa v~òom narodil jeden èlovek. Na to
+aby sa v~òom narodili dvaja µudia u¾ ale máme malý súbor µudí.
+
+\hotovo
+
+\definicia Nezávislé náhodné velièiny. Povieme, ¾e náhodné velièiny
+$X_1$, $X_2$, $\dots$ sú nezávislé, ak pre ka¾dý výber intervalov $I_1$,
+$I_2$, $\dots$ sú javy $(X_1 \in I_1)$, $(X_2 \in I_2)$, $\dots$
+nezávislé.
+
+$$
+\left((X_i \in I_i) = \left\{ \omega \in \Omega | X_i(\omega) \in
+I_i\right\}\right)
+$$
+
+\hotovo
+
+\definicia Náhodný vektor. Majme vektor $\vec X=(X_1,\dots,X_n)$, kde
+$X_1,\dots,X_n$ sú náhodné velièiny. Nazývame ho náhodný vektor.
+
+Distribuèná funkcia $F_{\vec X}(t_1,\dots,t_n) = P\left((X_1 \le t_1)
+\cap (X_2 \le t_2) \cap \dots \cap (X_n \le t_n)\right)$.
+
+Povieme, ¾e náhodný vektor je absolútne spojitý ak existuje funkcia
+$f(s_1,\dots,s_n)$ taká, ¾e
+
+$$
+F_{\vec X} (t_1,\dots,t_n) =
+\int\limits^{t_1}_{-\infty} \int\limits^{t_2}_{-\infty} \cdots \int\limits^{t_n}_{-\infty}
+f(s_1,s_2,\dots,s_n) \d s_1 \d s_2 \dots \d s_n.
+$$
+
+Funkcia $f(s_1,\dots,s_n)$ sa nazýva hustota (rozdelenia).
+
+$$
+f(t_1,\dots,t_n) = {\partial^n \over \partial t_1 \partial t_2 \cdots
+\partial t_n} F_{\vec X} (t_1,\dots,t_n).
+$$
+
+Funkcie $F_{\vec X}$ a $f$ sa nazývajú zdru¾ená distribuèná funkcia a zdru¾ená
+hustota.
+
+\hotovo
+
+\veta Majme $X_1,\dots,X_n$ náhodné velièiny a oznaèíme si vektor $\vec
+X=(X_1,\dots,X_n)$.
+
+Potom tvrdenia
+{\itemize
+\nli $X_1,\dots,X_n$ sú nezávislé,
+\nli $F_{\vec X}(t_1,\dots,t_n) = F_{X_1} (t_1) \cdot F_{X_2} (t_2)
+\cdot \cdots \cdot F_{X_n} (t_n)$,
+
+a v~prípade, ¾e vektor $\vec X$ je absolútne spojitý, potom aj
+
+\nli $f(t_1,\dots,t_n) = f_{X_1}(t_1)\cdot \cdots \cdot f_{X_n}(t_n)$
+}
+
+sú ekvivalentné.
+
+\hotovo
+
+\dokaz Doká¾eme cyklicky. Volíme $n=2$.
+
+{\advance\parindent by 20pt \item{$1.\to2.$}}
+
+Zvolíme si $I_1 = \left(-\infty,t_1\right>$, $I_2 =
+\left(-\infty,t_2\right>$. Potom 1. hovorí, ¾e javy $(X_1 \in I_1)$ a
+$(X_2 \in I_2)$ sú nezávislé.
+
+$$
+\eqalign{
+F_{\vec X}(t_1,t_2) &=
+P\left((X_1 \le t_1) \cap (X_2 \le t_2)\right) =
+P\left((X_1 \in I_1) \cap (X_2 \in I_2)\right) =
+P(X_1 \in I_1) \cdot P(X_2 \in I_2) = \cr
+&= P(X_1 \le t_1)\cdot P(X_2 \le t_2) = \cr
+&= F_{X_1} (t_1) \cdot F_{X_2} (t_2).
+}
+$$
+
+{\advance\parindent by 20pt \item{$2.\to3.$}}
+
+$$
+\eqalign{
+f(t_1,t_2) &=
+%
+{\partial^2 F_{\vec X} (t_1,t_2) \over \partial t_1 \partial t_2} =
+%
+{\partial^2 \over \partial t_1 \partial t_2} \left(F_{X_1}(t_1) \cdot
+F_{X_2}(t_2)\right) =
+%
+{\partial \over \partial t_1} \left({\partial \over \partial t_2}
+F_{X_1} (t_1) \cdot F_{X_2}(t_2)\right) = \cr
+%
+&= {\partial \over \partial t_1} \left(F_{X_1} (t_1) {\d \over \d t_2}
+F_{X_2} (t_2)\right) =
+%
+{\d \over \d t_1} F_{X_1} (t_1) \cdot {\d  \over \d t_2} F_{X_2} (t_2) = \cr
+%
+&= f_{X_1} (t_1) \cdot f_{X_2}(t_2).
+}
+$$
+
+Funkciu dvoch premenných som mohol rozdeli» na dve funkcie (podµa
+predchádzajúceho bodu). Potom je parciálna derivácia toto¾ná
+s~deriváciou podµa jednej premennej.
+
+{\advance\parindent by 20pt \item {$3.\to1.$}}
+
+Majme intervaly $I_1, I_2 \subset \R$ a chceme overi», ¾e javy $(X_1 \in
+I_1)$ a $(X_2 \in I_2)$ sú nezávislé.
+
+Obecne platí
+$$
+P(X \in I) = \int_I f_X (t) \d t.
+$$
+
+Podobne pre vektor $\vec X = (X_1, X_2)$ a mno¾inu $A \subset \R^2$ je 
+
+$$
+P(\vec X \in A) = \iint_A f(s_1,s_2) \d s_1 \d s_2
+$$
+
+kde $f(s_1,s_2)$ je zdru¾ená hustota vektoru $\vec X$.
+
+Oznaèíme $\vec X = (X_1,X_2)$.
+
+\obrazok{Mno¾ina}{img/6_2.pdf}
+
+$$
+(X_1 \in I_1) \cap (X_2 \in I_2) = (\vec X \in I_1 \times I_2)
+$$
+
+$$
+\eqalign{
+P\left((X_1 \in I_1) \cap (X_2 \in I_2)\right) &=
+P(\vec X \in I_1 \times I_2) =
+\iint_{I_1 \times I_2} f(s_1,s_2) \d s_1 \d s_2 = \cr
+&= \int_{I_2} \left( \int_{I_1} f(s_1,s_2) \d s_1\right) \d s_2 =
+\int_{I_2}\left(\int_{I_1} f_{X_1} (s_1) f_{X_2} (s_2) \d s_1 \right) \d
+s_2 = \cr
+&= \int_{I_2} f_{X_2} (s_2) \left(\int_{I_1} f_{X_1} (s_1) \d s_1\right)
+\d s_2 = \int_{I_1} f_{X_1} (s_1) \d s_1 \cdot \int_{I_2} f_{X_2} (s_2)
+\d s_2 = \cr
+&= P(X_1 \in I_1) \cdot P(X_2 \in I_2).
+}
+$$
+
+\hotovo
+\definicia Marginálna hustota. Hustota $k$-tej zlo¾ky vektoru $(X_1,\dots,X_n)$ sa zistí zo zdru¾enej
+hustoty $f_{\vec X}(t_1,\dots,t_n)$ tak, ¾e 
+
+$$
+f_{X_k}(t_k) =
+\int\limits^\infty_{-\infty}\cdots\int\limits^\infty_{-\infty} f_{\vec
+X} (t_1,\dots,t_k,\dots,t_n) \d t_1 \dots \d t_{k-1} \d t_{k+1} \dots \d
+t_n.
+$$
+
+Integrujem podµa v¹etkých premenných okrem $k$-tej. $f_{X_k}$ sa nazýva marginálna
+hustota.
+
+\hotovo
+
+\definicia Stredná hodnota náhodnej velièiny. Majme náhodnú velièinu
+$X$. Stredná hodnota $E(X)$ je:
+
+{\itemize
+\nli v~prípade diskrétnej náhodnej velièiny
+
+$$
+E(X) = \sum\limits_t tP(X=t) = \sum\limits_t t f_X(t)
+$$
+
+\nli v~prípade absolútne spojitej náhodnej velièiny
+
+$$
+E(X) = \int\limits^\infty_{-\infty} t f_X(t) \d t,
+$$
+
+kde $f_X(t)$ je hustota náhodnej velièiny $X$.
+}
+
+\hotovo
+
+\priklad Hodíme kockou, $X$ je poèet bodov. Aká je stredná hodnota?
+% TODO
+% bolo: priemerná hustota? --- ale toto sa mi nejak nezda
+\nobreak
+$$
+E(X) =
+\sum^6_{k=1} k \underbrace{P(X=k)}_{1/6} =
+{1+2+\cdots+6 \over 6} =
+3{,}5.
+$$
+
+\hotovo
+
+\priklad
+$$
+f_X(t) = \cases{
+0; & $t \not \in \langle a,b\rangle $ \cr
+{1/(b-a)}; & $t \in \langle a,b\rangle$
+}
+$$
+
+$$
+E(X) =
+\int\limits^\infty_{-\infty} t f_X(t) \d t =
+\int\limits^b_a t {1\over b-a} \d t =
+{1\over b-a} \left[{t^2\over 2}\right]^b_a =
+{1\over b-a} {b^2-a^2\over 2} =
+{b+a\over 2}
+$$
+
+O~aké rozdelenie ide? Áno, je to rovnomerné rozdelenie.
+
+\hotovo
+
+\priklad Hád¾eme mincou, pokiaµ nepadne panna. $X=1,2,\dots$ je poèet potrebných
+hodov. Ako dlho musíme hádza», teda aká je hodnota $E(X) = ?$
+
+$$
+\eqalign{
+P({\rm panna}) &= p \cr
+P({\rm orol}) &= 1-p
+}
+$$
+
+$$
+\eqalign{
+E(X) &= 
+\sum_t t P(X=t) =
+\sum_{k=1}^{\infty} kP(X=k) =
+\left<\!\left<P(X=k) = (1-p)^{k-1}p\right>\!\right> =
+\sum_{k=1}^\infty k(1-p)^{k-1}p = \cr
+&= p{1\over (1-(1-p))^2} =
+{1\over p}
+}
+$$
+
+Vyu¾il som poznatok o~geometrickej rade,
+$$
+\sum^\infty_{k=0} x^k = {1\over 1-x}
+$$
+
+èo je po derivovaní 
+
+$$
+\sum^\infty_{k=1} k x^{k-1} = {1\over (1-x)^2}.
+$$
+
+Je to vlastne súèet a ten sa derivuje èlen po èlene. Pozor na zmenu
+sèítacieho indexu $k$. Pre $k=0$ je $x^k=1$ a derivácia je nulová a
+preto v~druhej sume volím $k=1$.
+
+Pre symetrickú mincu platí
+
+$$
+E(X) = {1 \over 1/2} = 2.
+$$
+
+Na to aby padla panna je treba hodi» dva krát.
+
+\hotovo
+
+\veta Majme náhodné velièiny $X$ a $Y$. Potom:
+
+{\itemize
+\nli $E(\alpha X + \beta Y) = \alpha E(X) + \beta E(Y)$;
+\nli $Z = \varphi(X)$, $E(Z) = \int\limits^\infty_{-\infty} \varphi(t)
+f_X(t) \d t$;
+\nli $Z = \psi(X,Y)$, potom $E(Z) =
+\int^\infty_{-\infty}\int^\infty_{-\infty} \psi(s,t) f_{(X,Y)}(s,t) \d s
+\d t$.
+}
+
+Ak sú $X$, $Y$ nezávislé, potom 
+
+$$
+\eqalign{
+E(XY) &=
+\int\limits^\infty_{-\infty}\int\limits^\infty_{\infty} stf_{(X,Y)}
+(s,t) \d s \d t =
+\int\limits^\infty_{-\infty}\left(\int\limits^\infty_{-\infty}
+st f_X(s) f_Y(t)\d s\right)\d t = \cr
+&= \int\limits^\infty_{-\infty} t f_Y(t)
+\left(\int\limits^\infty_{-\infty} s f_X(s)\d s\right) \d t =
+\left(\int\limits^\infty_{-\infty} s f_X(s)\d s\right)
+\left(\int\limits^\infty_{-\infty} t f_Y(t) \d t\right) = \cr
+&= E(X) \cdot E(Y)
+}
+$$
+
+(Väè¹inou neplatí $\int\varphi\psi = \int\varphi \int\psi$.)
+
+\hotovo
+
+\priklad Náhodná velièina $X$ má Bernoulliho rozdelenie, teda
+$$
+P(X=k) = {n\choose k} p^k (1-p)^{n-k}.
+$$
+Aká je stredná hodnota $E(X)?$
+Rozdelenie je diskrétne, teda $X=0,1,\dots,n$.
+
+Strednú hodnotu urèím podµa definièného vz»ahu ako
+
+$$
+E(X) = \sum_{k=0} k{n \choose k} p^k (1-p)^{n-k}.
+$$
+
+Zavediem také náhodné velièiny $X_1,X_2,\dots,X_n$, aby pre ne platilo
+$$
+X_k = \cases{
+1& v $k$-tom hode padla panna\cr
+0& padol orol
+}.
+$$
+
+Potom $X = X_1 + \cdots + X_n$ a 
+
+
+$$
+E(X_k) = 1P(X_k = 1) + 0 P(X_k = 0) = p.
+$$
+
+Pou¾itím predchádzajúcej vety dostanem výsledok 
+$$
+E(X)=
+E(X_1 + \cdots + X_n) =
+E(X_1) + \cdots + E(X_n) = np.
+$$
+
+V~prípade symetrickej mince je to polovica hodov.
+
+\definicia {Rozptyl. Kovariancia}. Majme $X$, $Y$ náhodné velièiny.
+
+Rozptyl je definovaný ako 
+$$
+D(X)=E(X-E(X))^2
+$$
+
+a kovariancia ako
+
+$$
+C(X,Y) = E[(X-E(X))(Y-E(Y))].
+$$
+
+Rozptyl vyjadruje ako veµmi je funkcia rozkmitaná.
+
+\tvrdenie Rozptyl mô¾em upravi» do tvaru
+
+$$
+D(X) = E(X)^2 - (E(X))^2
+$$
+
+a kovarianciu do tvaru
+
+$$
+C(X,Y) = E(XY) - E(X)\cdot E(Y)
+$$
+
+\hotovo
+
+\dokaz Vyu¾ijem to, ¾e $E(E(X)) = E(X)$ \footnote{$^{1)}$}{Plynie
+z~toho, ¾e $E(X)$ je kon¹tanta.}.
+$$
+\eqalign{
+D(X) &=
+E(X-E(X))^2 =
+E(X^2-2X \cdot E(X)+(E(X))^2) =
+E(X^2) - E(2X\cdot E(X)) + E(E(X))^2 = \cr
+&= E(X^2) - 2E(X)\cdot E(X)+(E(X))^2 =
+E(X^2) -2(E(X))^2+(E(X))^2 =  \cr
+&= E(X^2)-(E(X))^2.
+}
+$$
+
+$$
+\eqalign{
+C(X,Y) &=
+E(XY-X\cdot E(Y)-Y\cdot E(X)+E(X) \cdot E(Y)) = \cr 
+&= E(XY)-E(Y)\cdot E(X) - E(X) \cdot E(Y) + E(X)\cdot E(Y) =\cr
+&=E(XY) - E(X)\cdot E(Y).
+}
+$$
+
+\hotovo
+
+\poznamka Platí $C(X,X) = D(X)$.
+
+Pre $X$, $Y$ nezávislé je
+$$
+C(X,Y) =
+E(XY)-E(X)\cdot E(Y) =
+E(X)\cdot E(Y) - E(X)\cdot E(Y) =
+0.
+$$
+
+Ïalej platí $E(X-E(X)) = E(X) - E(X) = 0.$
+
+\hotovo
+
+\veta Majme $X$, $Y$ nezávislé velièiny. Potom:
+{\itemize
+\nli $D(a) = 0$,
+\nli Ak $X$ a $Y$ sú nezávislé, tak $D(aY+bY)=a^2D(X)+b^2D(Y)$.
+}
+
+\hotovo
+
+\dokaz
+
+$D(a) = E(a^2)-[E(a)]^2 = a^2-(a)^2 = 0$
+
+$$
+\eqalign{
+D(aX+bY) &=
+E(aX+bY)^2 - (E(aX+bY))^2 =
+E(a^2X^2+2abXY+b^2Y^2) - (aE(X)+bE(Y))^2 =\cr
+&= a^2E(X^2)+ 2abE(XY)+b^2E(Y^2)-(a^2(E(X))^2+2abE(X)\cdot E(Y) +
+b^2(E(Y))^2) = \cr
+&= a^2[E(X^2)-(E(X))^2]+b^2[E(Y^2)-(E(Y))^2] = \cr
+&= a^2 D(X) + b^2D(Y).
+}
+$$
+
+\hotovo
+\priklad Náhodná velièina $X$ a Bernoulliho rozdelenie $B(n,p)$,
+
+$$
+P(X=k) = {n\choose k} p^k (1-p)^{n-k}.
+$$
+
+Stredná hodnota je $EX = np$. Akú hodnotu má rozptyl $DX$?
+
+Zavediem náhodné velièiny $X_1,\dots,X_n$ takto:
+
+$$
+X_k = \cases{
+1; & úspech v $k$-tom pokuse, \cr
+0; & neúspech v $k$-tom pokuse.
+}
+$$
+
+Potom $X = X_1 + \cdots + X_n$. Rozptyl vyjadrím ako $D(X) = D(X_1) + \cdots
++ D(X_n)$.
+
+Úprava $E(X^2) = E(X)$ je mo¾ná preto, lebo na tej mocnine nezále¾í. $X$
+nadobúda hodnoty $0$ alebo $1$, ktoré sa po umocnení nezmenia.
+
+$$
+D(X_k) = E(X_k^2) - (E(X_k))^2 = E(X_k) - (E(X_k))^2
+$$
+
+a
+
+$$
+E(X_k) = 0\cdot P(X_k = 0) + 1\cdot P(X_k=1) = p.
+$$
+
+Po dosadení $D(X_k) = p-p^2 = (1-p)p$. Záver je, ¾e $D(X) = np(1-p)$.
+
+\veta {\it Èeby¹evova nerovnos».} Majme náhodnú velièinu $X$ s~koneèným
+rozptylom $D(X)$. (Ak je nekoneèný, tak nerovnos» platí, ale niè nám
+nehovorí; uvidíme neskôr.) Potom pre ka¾dé $\varepsilon > 0$ platí:
+
+$$
+P(|X-E(X)| > \varepsilon) \le {D(X) \over \varepsilon^2}
+$$
+
+\obrazok{K Èeby¹evovej nerovnosti}{img/8_1.pdf}
+
+\hotovo
+
+\dokaz
+
+Predpokladajme, ¾e $X$ je absolútne spojitá s~hustotou $f_X(t)$.
+
+Polo¾íme $Y = |X - E(X)|$. Ako to vyzerá s~$E(Y^2)$? V¹imneme si, ¾e
+absolútna hodnota je zbytoèná a teda
+
+$$
+E(Y^2) = E(|X-E(X)|^2) = E((X-E(X))^2) = D(X),
+$$
+
+èo sa rovná rozptylu náhodnej velièiny.
+
+Spoèítame $E(Y^2)$:
+
+Podµa vzorca $E(\varphi(Y)) = \int\limits^\infty_{-\infty} \varphi(t) f_Y(t) \d
+t$ získam vz»ah
+
+$$
+E(Y^2) = \int\limits^\infty_{-\infty} t^2 f_Y(t)_ \d t \ge \cdots
+$$
+
+Ak zmen¹ím integraèný obor tak sa hodnota zmen¹í -- integrujem kladú
+funkciu.
+
+$$
+\cdots
+\int\limits^\infty_\varepsilon t^2 f_Y (t) \d t \ge
+\int\limits^\infty_\varepsilon \varepsilon^2 f_Y(t) \d t =
+\varepsilon^2 \int\limits^\infty_\varepsilon f_Y(t) \d t =
+\cdots
+$$
+
+Preto¾e $P(Y \in (a,b)) = \int\limits^b_a f_Y(t) \d t$, mô¾em pokraèova».
+
+$$
+\cdots = \varepsilon^2 P(Y \in (\varepsilon, \infty)) = \varepsilon^2
+(P(Y > \varepsilon)) = \varepsilon^2P(|X-E(X)| > \varepsilon).
+$$
+
+To dohromady dáva
+
+$$
+D(X) \ge \varepsilon^2 P(|X-E(X)| > \varepsilon),
+$$
+
+z~èoho po vydelení $\varepsilon^2$ dostaneme Èeby¹evovu nerovnos».
+
+Tá nám umo¾ní poèíta» iný typ príkladov.
+
+\hotovo
+
+\priklad Majme dve mince. Jedna je symetrická, druhá má pravdepodobnos»
+$P({\rm panna}) = {3/4}$. Jednu zvolíme a hodíme $n$ hodov.
+
+Koµko je treba hodov aby sme so zadanou istotou $95\;\%$ urèili typ mince?
+
+(Úplne to je a¾ pri $n \to \infty$, ale takto máme aspoò nejakú
+pravdepodobnos», ¾e to vy¹lo. Aj tá nesymetrická minca sa mô¾e tvári»
+ako symetrická, ale nie je to veµmi pravdepodobné.)
+
+Oznaèíme si $n$ poèet hodov, $s_n$ poèet panien v~nich.
+
+$s_n/n = 1/2$ pre symetrickú mincu a $s_n/n = 3/4$ pre nesymetrickú mincu.
+
+Okolo ka¾dého z~bodov $s_n$ vytvoríme rovnako veµké disjunktné okolia
+s~polomerom $1/8$. Podµa toho, do ktorého z~nich nám spadne vypoèítaná
+hodnota, budeme usudzova» o~akú mincu ide.
+
+Pre nesymetrickú mincu 
+
+$$
+P\left(\left|{s_n \over n} - {3 \over 4}\right| \le {1 \over 8}\right)
+\ge 0{,}95
+$$
+
+pre isté $n$.
+
+Ekvivalentne s~obrátenými podmienkami pre symetrickú aj nesymetrickú
+mincu
+
+$$
+\eqalign{
+P\left(\left| {s_n \over n} - {1 \over 2} \right| > {1 \over 8} \right)
+&\le 0{,}05,  \cr
+P\left(\left| {s_n \over n} - {3 \over 4} \right| > {1 \over 8} \right)
+&\le 0{,}05.
+}
+$$
+
+Pou¾ijeme Èeby¹evovu nerovnos».
+
+Zvolíme hodnotu náhodnej velièiny $X = {s_n / n}$.
+
+Pre symetrickú mincu platí
+
+$$
+E(X) =
+E\left({s_n \over n}\right) =
+{1 \over n} E(s_n) =
+{1 \over n} \cdot n \cdot {1 \over 2} =
+{1 \over 2},
+$$
+
+$$
+D(X) =
+D\left({s_n \over n}\right) =
+{1 \over n^2} D(s_n) =
+{1 \over n^2} n {1 \over 2} \left(1-{1 \over 2}\right) =
+{1 \over 4n}.
+$$
+
+(Preto¾e u¾ z~minula vieme, ¾e $D(s_n) = np(1-p)$.)
+
+$$
+P\left(\left| {s_n \over n} - {1 \over 2} \right| > {1 \over 8}\right) =
+P\left(\left| X-EX\right| > {1 \over 8}\right) \le {DX \over (1/8)^2} =
+{ 1/(4n)\over 1/64} =
+{16 \over n} \le 0{,}05.
+$$
+
+Dostávam teda vz»ah pre minimálny poèet hodov $n \ge {16 / 0{,}05} = 320$.
+
+
+Pre nesymetrickú mincu platí
+
+$$
+E(X) =
+{ 1 \over n} E(s_n) =
+{1 \over n} \cdot n \cdot {3 \over 4} =
+{3 \over 4}.
+$$
+
+$$
+D(X) =
+D\left({s_n \over n}\right) =
+{1 \over n^2} D(s_n) =
+{1 \over n^2} n {3 \over 16} =
+{3 \over 16n}.
+$$
+
+$$
+P\left(\left|X-E(X)\right| > {1 \over 8}\right) \le
+{D(X) \over (1/8)^2} =
+{ 3/(16n) \over 1/64 } =
+{12 \over n} < 0{,}05.
+$$
+
+V~tomto prípade je minimálny poèet hodov $n \ge {12 / 0{,}05} =
+240$.
+
+Záver: hodíme 320 hodov a zistíme relatívny poèet panien. Podµa toho do
+akého okolia (èi k~$1/2$ alebo k~$3/4$) to padne, mô¾em s~$95\;\%$  istotou
+poveda», ktorá minca to je.
+
+Èasom uvidíme, ¾e sa dá tento typ nerovnosti zlep¹i». V~Èeby¹evovej
+nerovnosti je veµa zanedbávania a je málo presná. Neskôr uvidíme, ¾e $n$
+mô¾e by» men¹ie.
+
+\hotovo
+
+\veta {\it Zákon veµkých èísel.} Majme postupnos» nezávislých náhodných
+velièín $X_1, X_2, \dots$ s~rovnakou distribuènou funkciou.
+
+$$
+\lim_{n\to \infty} P\left(\left| {X_1 + \cdots + X_n \over n} -
+E(X_i)\right| > \varepsilon \right) = 0,
+$$
+
+pre ka¾dé $\varepsilon$. $i = 1, \dots, n$.
+
+Náhodné velièiny $X_1, \dots X_n$ mô¾u reprezentova» výsledky merania,
+stredná hodnota $E(X_i)$ je \uv{skutoèná hodnota}.
+
+Po prevedení do doplnkového tvaru
+
+$$
+\lim_{n \to \infty} P\left(\left|{X_1 + \cdots + X_n \over n} -
+E(X_i)\right| \le \varepsilon\right) = 1.
+$$
+
+Èím viac meraní, tým je väè¹ia pravdepodobnos», ¾e aritmetický priemer
+sa od skutoènej hodnoty lí¹i o~ná¹ $\varepsilon$.
+
+\hotovo
+
+\dokaz
+
+Oznaèíme $X = (X_1 + \cdots + X_n) / n$.
+
+Potom
+$$
+E(X) =
+E\left({X_1+\cdots + X_n\over n}\right) =
+{1 \over n} (E(X_1) + \cdots + E(X_n)).
+$$
+
+Preto¾e $E(X_1) = E(X_2) = \cdots = E(X_n)$ (majú rovnakú distribuènú funkciu),
+platí
+
+$$
+E(X) = {1 \over n} n E(X_1) = E(X_1).
+$$
+
+Rozptyl je
+
+$$
+D(X) =
+D\left({X_1+\cdots+X_n \over n}\right) =
+{1 \over n^2} (D(X_1) + D(X_2)+ \cdots + D(X_n)) =
+{D(X_1) \over n}.
+$$
+
+Rozptyl $D(X)$ je rozptyl aritmetického priemeru.
+
+Èo nám Èeby¹evova nerovnos» dá?
+
+Chceme poèíta»
+
+$$
+\lim_{n \to \infty} P\left(\left|{X_1+\cdots + X_n \over n} -
+E(X_1)\right| > \varepsilon\right) =
+\lim_{n \to \infty} P\left(|X-E(X)| > \varepsilon\right) \le
+\lim_{n \to \infty} {D(X) \over \varepsilon^2} =
+\lim_{n \to \infty} {D(X_1) \over n\varepsilon^2}.
+$$
+
+Ak $n \to \infty$ tak ten zlomok má limitu 0. Preto¾e pravdepodobnos»
+nie je men¹ia ne¾ nula.
+
+\hotovo
+
+\definicia Konvolúcia. Majme také funkcie $f$, $g$ aby platlo
+$$
+\int^\infty_{-\infty} |f(t)| \d t < \infty
+$$
+a
+$$
+\int^\infty_{-\infty}
+|g(t)| \d t < \infty.
+$$
+Konvolúcia funkcií $f$, $g$ sa nazýva funkcia
+
+$$
+(f*g)(t) = \int\limits^\infty_{-\infty} f(t-s)g(s) \d s.
+$$
+
+Mô¾me sa na to pozera» ako na \uv{iný} súèin.
+
+\hotovo
+
+\poznamka Nie je dôle¾ité v~ktorej funkcii sa nachádza posun $s$.
+
+$$
+\int\limits^\infty_{-\infty} f(t-s)g(s) \d s =
+\left|{u=t-s \atop \d u = -\d s}\right| =
+\int\limits_\infty^{-\infty} f(u)g(t-u) (-\d u) =
+\int \limits^\infty_{-\infty} f(u) g(t-u) \d u
+$$
+
+\hotovo
+
+Preèo sa tu tá konvolúcia vyskytuje?
+
+\veta Majme dve nezávislé náhodné velièiny $X$, $Y$. Ka¾dá bude ma» hustotu
+rozlo¾enia $f_X(t)$ a $f_Y(t)$. 
+
+Potom $Z=X+Y$ má hustotu danú funkciou
+
+$$
+f_Z = f_X * f_Y.
+$$
+
+\hotovo
+
+\dokaz
+
+$$
+F_Z(t) =
+P(Z \le t) =
+P(X+Y \le t) =
+\cdots
+$$ 
+
+\obrazok{Mno¾ina $\{(X,Y) | X+Y \le t\}$}{img/8_2.pdf}
+
+$$
+\eqalign{
+\cdots &=
+P\left((X,Y) \in M\right) =
+\iint_M f_{(X,Y)} (s,u) \d s \d u =
+\iint_M f_X (s) f_Y(u) \d s \d u = \cr
+&= \int\limits^\infty_{-\infty}\int\limits^{t-u}_{-\infty} f_X(s) f_Y(u) \d s \d u =
+\int\limits^\infty_{-\infty} f_Y(u) \left(\int\limits^{t-u}_{-\infty} f_X (s) \d
+s\right) \d u =
+\int\limits^\infty_{-\infty} f_Y(u) P(X \le t-u) \d u = \cr
+&= \int\limits^\infty_{-\infty} f_Y(u) F_X(t-u) \d u.
+}
+$$
+
+Teraz sa pozrieme na zaèiatok a na koniec. Deriváciou podµa $t$
+dostaneme
+
+$$
+f_Z(t) =
+\left(F_Z(t)\right)' =
+{\d \over \d t} \left(\int\limits^\infty_{-\infty} f_Y(u) F_X(t-u)\d u\right) =
+\int\limits^\infty_{-\infty} f_Y (u) f_X(t-u) \d u =
+f_Y * f_X.
+$$
+
+\hotovo
+Ak má náhodná velièina $X$ normálne rozdelenie $N(\mu,\sigma^2)$, potom
+
+$$
+E(X) = \int\limits^\infty_{-\infty} t f(t) \d t =
+{1 \over \sqrt{2\pi}\sigma} \int\limits^\infty_{-\infty} t \e^{-{(t-\mu)^2
+\over 2\sigma^2}} \d t = \cdots
+$$
+
+Exponent exponenciály je zlo¾itý. Preto volím substitúciu:
+
+$$
+\cdots =
+\left|\matrix{
+{(t-u)/\sigma} &= &u\cr
+t&= &\sigma u + \mu\cr
+\d t &= & \sigma \d u
+}\right| = \cdots
+$$
+
+Integraèné medze ostávajú nezmenené.
+
+$$
+\cdots =
+{1 \over \sqrt{2\pi}\sigma} \int\limits^\infty_{-\infty} (\sigma u +
+\mu) \e^{-{1 \over 2}u^2} \sigma \d u =
+{1 \over \sqrt{2\pi}} \int\limits^\infty_{-\infty} \sigma u \e^{-{1 \over 2} u^2} \d u +
+{1 \over \sqrt{2\pi}} \int\limits^\infty_{-\infty} \mu \e^{-{1 \over 2}u^2 } \d u = \cdots
+$$
+
+Miesto poèítania integrálu si mô¾me v¹imnú» ich vlastnosti. V~prvom
+integráli je nepárna funkcia. To, èo sa naèíta v~$\infty$, sa odèíta
+v~$-\infty$. Prvý integrál je teda nulový.
+
+Druhý integrál je tzv. Laplaceov integrál. Primitívna funkcia k~nemu
+síce existuje, ale nedá sa zlo¾i» zo známych funkcií. Jeho hodnoty sú
+tabuµkované. Integrál z~tejto funkcie cez celé $\R$ je rovný hodnote
+$\sqrt{2\pi}$.
+
+$$
+\cdots = 1 = E(X).
+$$
+
+Ako vyzerá rozptyl? Podµa definície vieme, ¾e rozptyl
+
+$$
+D(X) = E(X^2) - (E(X))^2.
+$$
+
+Vypoèítame strednú hodnotu $X^2$.
+
+$$
+E(X^2) =
+{1 \over \sqrt{2\pi}\sigma}  \int\limits^\infty_{-\infty} t^2
+\e^{-{(t-\mu)^2\over 2\sigma^2}} \d t = \cdots
+$$
+
+Pou¾ijeme rovnakú substitúciu ako pri poèítaní predo¹lého integrálu:
+
+$$
+\cdots =
+\left|{t-\mu \over \sigma} = u\right| =
+{1 \over \sqrt{2\pi}\sigma}
+\int\limits^\infty_{-\infty} (\sigma u + \mu)^2 \e^{{1 \over 2}u^2}
+\sigma \d u = {1 \over \sqrt{2\pi}} \int\limits^\infty_{-\infty}
+\left(\sigma^2 u^2 + 2\sigma\mu u + \mu^2\right)\e^{-{1 \over 2}u^2} \d
+u = \cdots
+$$
+
+Integrál znova mô¾me rozlo¾i» na viac integrálov. Tretí je znova
+Laplaceov integrál a rovná sa $\sqrt{2\pi}\mu$.
+
+Druhý integrál je nulový, preto¾e rovnako ako minule obsahuje nepárnu
+funkciu.
+
+Ostáva nám teda spoèíta» iba prvý integrál.
+
+$$
+\cdots = {\sigma^2 \over \sqrt{2\pi}} \int\limits^\infty_{-\infty} u^2
+\e^{{1/2}u^2} \d u + \mu^2 = \cdots
+$$
+
+\vfill\break
+Pou¾ijeme metódu \uv{Per-partes}:
+
+$$
+\cdots = \left|\matrix{
+u = f &\hfil\qquad\hfil u\e^{-{1 \over 2}u^2} = g'\cr
+1 = f' &\hfil\qquad\hfil -\e^{-{1 \over 2} u^2} = g
+}\right| 
+%
+={\sigma^2 \over \sqrt{2\pi}} \left\{\left[-u\e^{-{1 \over
+2}u^2}\right]^\infty_{-\infty} + \int\limits^\infty_{-\infty} \e^{-{1
+\over 2}u^2} \d u\right\} + \mu^2 = \cdots
+$$
+
+Znova si mô¾me miesto poèítania integrálu v¹imnú» jeho vlastnosti. Prvý
+integrál má záporný exponent, ktorý sa zväè¹uje a preto pre $\pm\infty$
+konverguje k~nule.
+
+Druhý integrál je Laplaceov integrál, ktorého hodnotu u¾ poznáme.
+
+$$
+\cdots = {\sigma^2 \over \sqrt{2\pi}} \left\{\sqrt{2\pi}\right\} + \mu^2 =
+\sigma^2 + \mu^2.
+$$
+
+Odtiaµ vidíme, ¾e pre rozptyl platí
+
+$$
+D(X) = \sigma^2 + \mu^2 - \mu^2 = \sigma^2.
+$$
+
+Preto¾e s~Laplaceovým integrálom budeme potrebova» pracova», oznaèíme si
+ho ako
+
+$$
+\phi(t) = {1 \over \sqrt{2\pi}} \int\limits^t_{-\infty} \e^{-{1 \over
+2}u^2} \d u;
+$$
+
+potom pre jeho deriváciu platí
+
+$$
+\phi'(t) = \e^{-{1 \over 2} t^2}.
+$$
+
+Koeficient ${1 / \sqrt{2\pi}}$ sme sem dali preto, aby limita
+$\phi(t)$ v~nekoneène vychádzala $1$.
+
+\obrazok{Závislos» Laplaceovho integrálu na integraènej medzi
+$t$}{plot/9_1.pdf}
+
+Platí 
+$$
+\phi(t_0) + \phi(-t_0) = 1.
+$$
+
+\definicia ©tandardizovaný súèet. Majme nezávislé náhodné velièiny $X_1,
+X_2,\dots$. (Pod $X_i$ si mô¾me predstavi» výsledky meraní.)
+
+$E(X_i) = \mu$ a $D(X_i) = \sigma^2$. Polo¾íme
+
+$$
+X_i^* = { X_i - \mu\over \sigma}.
+$$
+
+To má výhodu v~tom, ¾e ich stredná hodnota bude $0$ a rozptyl $1$. To sú
+dos» \uv{príjemné} hodnoty.
+
+Potom 
+$$
+E(X_i^*)= E\left({X_i-\mu \over \sigma}\right) = \cdots
+$$
+
+Kon¹tanty zo strednej hodnoty vytkneme a dostávame:
+
+$$
+\cdots =
+{1 \over \sigma} (E(X_i) - E(\mu)) =
+{1 \over \sigma} (\mu-\mu) =
+0.
+$$
+
+Pre rozptyl platí
+
+$$
+D(X_i^*) =
+D\left({1 \over \sigma}(X_i - \mu)\right) =
+{1 \over \sigma^2}\left(D(X_i)-D(\mu)\right) =
+{1 \over \sigma^2} (\sigma^2-0) =
+1.
+$$
+
+Aj tu sa kon¹tanty vytýkali -- s~druhou mocninou. Kon¹tantná funkcia sa
+nerozptyluje.
+
+\obrazok{Transformovaná náhodná velièina}{img/9_1.pdf}
+
+Funkciu posunieme tak, aby $E(X^*) =0$ a $D(X^*)=1$.
+
+©tandardizovaný súèet náhodných velièín $X_1, X_2, \dots$ je 
+
+$$
+S_n^* = {1 \over \sqrt{n}}\left(X_1^* + X_2^* + \cdots X_n^*\right) =
+{X_1 + X_2 + \cdots X_n - n\mu \over \sqrt{n} \sigma}.
+$$
+
+Preèo takýto súèet? Chceme stále strednú hodnotu nulovú a rozptyl
+jednotkový. To zaruèí voµba koeficientu.
+
+Platí, ¾e
+
+$$
+\eqalign{
+E(S_n^*) &= 0,\cr
+D(S_n^*) &= D\left({1 \over \sqrt{n}}\left(X_1^*+\cdots+X_n^*\right)\right) =
+{1 \over n} n = 1.
+}
+$$
+
+\hotovo
+
+\veta {\bf Centrálna limitná veta.} Majme postupnos» nezávislých
+náhodných velièín $X_1, X_2, \dots$, ktoré majú $E(X_i) = \mu$ a $D(X_i)
+= \sigma^2$.
+
+Potom platí
+
+$$
+\lim_{n\to\infty} P(a<S_n^*<b) =
+{1 \over \sqrt{2\pi}} \int\limits^b_a \e^{-{u^2/2}} \d u.
+$$
+
+Vyjadrené iným spôsobom:
+
+$$
+\lim_{t \to \infty} F_{S_n^*} (t) = \phi(t).
+$$
+
+Nemusíme vedie» ako sa chovajú jednotlivé pokusy. Ale vieme, ¾e ak ich
+budeme ma» väè¹í poèet, tak sa súbor náhodných velièín bude chova» tak,
+ako keby mal rozdelenie podµa Gaussovej krivky.
+
+\priklad Majme dve mince. Symetrickú a nesymetrickú s~$P({\rm panna}) =
+{3 / 4}$. Koµko je treba hodov aby sme s~$95\;\%$ istotou mohli urèi» o~akú
+mincu ide?
+
+Tento príklad sme u¾ poèítali pomocou Èeby¹evovej nerovnosti. Teraz
+k~výpoètu pou¾ijeme centrálnu limitnú vetu.
+
+Zavedieme si: $X_i = \cases{1& v $i$-tom hode padla panna\cr0& nepadla
+panna}$.
+
+Súèet $X_1+X_2+\dots+X_n$ vyjadruje poèet panien v~$n$ hodoch.
+
+Hµadáme kritérium podµa ktorého mô¾me poveda», o~akú mincu ide.
+
+Vieme, ¾e ak by $n \to \infty$, tak
+
+$$
+{X_1 + X_2 + \cdots X_n \over n} \to E(X).
+$$
+
+Teoretické pravdepodobnosti sú ${1 / 2}$ a ${3 / 4}$. Okolo
+týchto bodov vytvoríme disjukntné okolia, ktorých polomer bude
+$\varepsilon={1/8}$. Pre ka¾dú mincu musíme poèíta» zvlá¹».
+
+$$
+P\left(\left|{X_1+\cdots+X_n \over n} - \mu\right| \le
+\varepsilon\right) \ge 0{,}95.
+$$
+
+Hµadáme, ako sa od tohto $\mu$ lí¹i aritmetický priemer. Otázka znie, aké
+musí by» $n$, aby jav mal po¾adovanú pravdepodobnos»?
+
+Musíme pou¾i» ¹tandardizovaný súèet, podmienku vyjadríme pomocou
+$S_n^*$.
+
+$$
+-\varepsilon \le {X_1 + \cdots X_n \over n} - \mu  \le \varepsilon
+$$
+
+$$
+-\varepsilon \le {X_1 + \cdots X_n - n\mu \over \sigma\sqrt{n}} \le
+\varepsilon \quad \Big/ \matrix{\sqrt{n}\cr\sigma}
+$$
+
+$$
+-{\varepsilon \sqrt{n} \over \sigma} \le S_n^* \le {\varepsilon\sqrt{n}
+\over \sigma}
+$$
+
+Pre aké $n$ je
+
+$$
+P\left(-{\varepsilon\sqrt{n} \over \sigma} \le S_n^* \le {\varepsilon
+\sqrt{n} \over \sigma}\right) \ge 0{,}95?
+$$
+
+Centrálna limitná veta hovorí, ¾e
+
+$$
+\eqalign{
+P\left(-{\varepsilon\sqrt{n} \over \sigma} \le S_n^* \le {\varepsilon
+\sqrt{n} \over \sigma}\right) =
+{1 \over \sqrt{2\pi}} \int\limits^{\varepsilon \sqrt{n} \over \sigma}_{-{\varepsilon \sqrt{n}
+\over \sigma}} \e^{-(1 / 2)u^2} \d u = \phi\left({\varepsilon \sqrt{n}
+\over \sigma}\right) - \phi\left(-{\varepsilon\sqrt{n} \over
+\sigma}\right) = \cr
+= \phi\left({\varepsilon \sqrt{n}\over \sigma}\right) -
+\left(1-\phi\left({\varepsilon\sqrt{n} \over \sigma}\right)\right) =
+2\phi\left({\varepsilon \sqrt{n} \over \sigma}\right) - 1.
+}
+$$
+
+E¹te nepoznáme $\sigma$,
+
+$$
+\sigma^2 = D(X).
+$$
+
+To mô¾me spoèíta», alebo si v¹imneme, ¾e hádzanie mincou je vlastne
+Bernoulliho schéma a tam rozptyl poznáme. Ale skúsime si to spoèíta».
+
+$$
+\sigma^2 = D(X_i) = E(X_i)^2 - (E(X_i))^2 = \cdots
+$$
+
+V~prvom èlene nezále¾í na mocnine. Kde bola $1$ tam ostáva, kde bola $0$
+tam ostáva.
+
+$$
+\cdots = E(X_i) - (E(X_i))^2.
+$$
+
+
+Pre jeden hod platí 
+$$
+E(X_i) = 0 \cdot P(X_i = 0) + 1\cdot P(X_i = 1) = p,
+$$
+
+pravdepodobnos» pre rôzne mince je $p={1 / 2}$ alebo $p={3 / 4}$.
+
+Odtiaµ vidíme, ¾e $\sigma^2 = p-p^2 = p(1-p).$
+
+Mô¾me spoèíta» prípad symetrickej mince:
+
+$\varepsilon={1 / 8}$, $\sigma^2={1 / 4}$.
+
+$$
+\eqalign{
+2\phi\left({{1 \over 8} \sqrt{n} \over {1 \over 2}}\right) - 1 &\ge 0{,}95\cr
+2\phi\left({\sqrt{n} \over 4}\right) - 1 &\ge 0{,}95\cr
+\phi\left({\sqrt{n} \over 4}\right) &\ge 0{,}975
+}
+$$
+
+Mô¾me vypoèíta» integrál, alebo nájs» v~tabuµkách, pre akú hodnotu
+parametra má funkcia $\phi$ hµadanú hodnotu:
+
+$$
+\eqalign{
+{\sqrt{n} \over 4} &\ge 1{,}96\cr
+n &\ge 62.
+}
+$$
+
+Pre prípad nesymetrickej mince:
+
+$\varepsilon = {1 / 8}$, $\sigma^2={3 / 16}$.
+
+$$
+\eqalign{
+2\phi\left({{1\over 8}\sqrt{n}\over {\sqrt{3}\over4}}\right)-1 &\ge
+0{,}96\cr
+\phi\left({\sqrt{n}\over 2\sqrt{3}}\right) &\ge 0{,}975\cr
+{\sqrt{n} \over 2\sqrt{3}} &\ge 1{,96}\cr
+n &\ge 47.
+}
+$$
+
+Záver: Na to, aby sme so zadanou pravdepodobnos»ou urèili o~akú mincu
+ide, je potrebných aspoò $62$ hodov.
+

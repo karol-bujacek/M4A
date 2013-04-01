@@ -1,0 +1,140 @@
+\input graphicx
+\input pdfcolor
+
+\font\titlefont=csbx12 at 22pt
+\font\sectionfont=csbx12 at 16pt
+\font\subsectionfont=csbx12
+
+\newcount\sectioncount
+\newcount\subsectioncount
+\newcount\subsubsectioncount
+\newcount\tabcount
+\newcount\poradovnik
+\newcount\imgcnt
+\newcount\listcount
+
+\sectioncount=-1
+
+\def\obrazok#1#2{
+\medskip%
+\advance\imgcnt by 1%
+\centerline{\includegraphics{#2}}\nobreak%
+\centerline{{\bf Obrázok \the\sectioncount.\the\imgcnt.:} #1.}%
+}
+
+
+\def\newpage{\vfill\break}
+
+\def\title#1\par{
+	{\parindent=0pt \titlefont \centerline{#1}}
+}
+
+\def\section#1\par{
+	\removelastskip
+	\subsectioncount=0
+	\poradovnik=0
+	\imgcnt=0
+	\vskip 1cm
+	\advance\sectioncount by 1
+	{\sectionfont \leftline{\the\sectioncount. #1}}\nobreak\noindent
+}
+
+\def\subsection#1\par{
+	\removelastskip
+	\subsubsectioncount=0
+	\medskip
+	\advance\subsectioncount by 1
+	{\subsectionfont\leftline{\the\sectioncount.\the\subsectioncount. #1}}\nobreak\smallskip\noindent
+}
+
+\def\subsubsection#1\par{
+	\removelastskip
+	\medskip
+	\advance\subsubsectioncount by 1
+	{\subsectionfont\leftline{\the\sectioncount.\the\subsectioncount.\the\subsubsectioncount. #1}}\nobreak\smallskip\noindent
+}
+
+\def\cosi#1{%
+\global\advance\poradovnik by 1%
+\noindent{\bf \the\sectioncount.\the\poradovnik. #1. }%
+\nobreak%
+}
+
+\def\hotovo{%
+   \hfill\vbox{\hrule\hbox to6pt{\vrule
+height5pt\hfil\vrule}\hrule}
+\medskip
+}
+
+%% ciernobielo
+
+\let\Green=\Black
+\let\RoyalBlue=\Black
+\let\BrickRed=\Black
+
+
+\let\Default=\Black
+
+\def\semtam{\hskip50pt\hskip-70pt}
+
+\def\priklad{\cosi{Príklad}}
+
+\def\definicia#1.{\semtam\Green\cosi{Definícia}\Default{\it #1.}}
+
+\def\tvrdenie{\semtam\cosi{Tvrdenie}}
+\def\dokaz{\semtam\RoyalBlue\cosi{Dôkaz}\Default}
+\def\veta{\semtam\BrickRed\cosi{Veta}\Default}
+\def\poznamka{\cosi{Poznámka}\Default}
+
+%%%%
+\def\itemize{\advance\parindent by 20pt}
+
+\def\nli{\advance\listcount by 1 \item{\the\listcount.}}
+\def\rli{\advance\listcount by 1 \item{\romannumeral\the\listcount)}}
+\def\bli{\item{$\bullet$}}
+
+
+\def\table#1{
+	\medskip
+	\centerline{
+		\global\advance\tabcount by 1
+		\item{\sl Tabuµka \the\tabcount:} #1
+	}
+	\bigskip
+}
+
+\def\\{\crcr\noalign{\hrule}}
+
+\def\dhrule#1{\hrule\vskip #1 \hrule}
+
+
+%\def\R{{\bf R}}
+
+\def\d{{\rm \;d\,}}
+\def\e{{\rm e}}
+
+\font\mathbbbf=bbm10
+\newfam\bbbfmath
+
+\font\mathbbbfscript=bbm8
+\scriptfont6=\mathbbbfscript
+\textfont\bbbfmath=\mathbbbf
+
+\def\R{{\fam\bbbfmath R}}
+
+\font\mathbf=cmmib10
+\newfam\bfmath
+
+\font\mathbfscript=cmmib8
+%\scriptfont8=\mathbfscript
+\scriptfont9=\mathbfscript
+
+\textfont\bfmath=\mathbf
+
+\let\oldvec=\vec
+\def\vec#1{
+{
+\fam\bfmath#1}
+}
+
+\def\iint{\int\!\!\!\int}

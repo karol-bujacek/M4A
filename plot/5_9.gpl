@@ -1,0 +1,28 @@
+set term mp;
+set output "5_9.mp";
+
+set zeroaxis lt 8;
+
+set samples 2000;
+set isosamples 2000;
+
+set nokey;
+
+set border 3;
+set xtics nomirror;
+set ytics nomirror;
+
+set yrange[0:2]
+set xrange[-1:3]
+
+set ytics (0, 1);
+set xtics ("$\\mu$" 1);
+
+f1(x) = 1/(sqrt(2*3.1415)*0.5) * exp(-(x-1)**2/(2*0.5**2));
+
+set size 0.8,0.5
+
+set ylabel "$f(t)$" rotate by 0
+set xlabel "$t$"
+
+plot f1(x) lt 1 lw 2
